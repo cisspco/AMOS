@@ -1,17 +1,30 @@
 # AMOS IOC Tracker
 
-Defensive blocking data for AMOS / Atomic macOS Stealer infrastructure. Updated daily via automated IOC collection.
+**Last updated:** 2026-08-24 UTC
 
-**Last updated:** 2026-08-23 UTC  
-**Verified domains:** 23 | **Verified IPs:** 3 | **Unverified domains:** 1 | **Unverified IPs:** 0 | **Hashes:** 0
+| Category | Count |
+|---|---|
+| Verified domains | 53 |
+| Verified IPs | 8 |
+| Verified hashes (SHA-256) | 4 |
+| Unverified domains | 1 |
+| Unverified IPs | 0 |
 
-## Raw Blocklist URLs
+## Blocklist URLs (raw, for firewall/DNS sinkhole import)
 
-- **Verified domains:** `https://raw.githubusercontent.com/cisspco/AMOS/main/blocklists/domains.txt`
-- **Verified IPs:** `https://raw.githubusercontent.com/cisspco/AMOS/main/blocklists/ips.txt`
-- **Unverified domains:** `https://raw.githubusercontent.com/cisspco/AMOS/main/blocklists/unverified-domains.txt`
-- **Unverified IPs:** `https://raw.githubusercontent.com/cisspco/AMOS/main/blocklists/unverified-ips.txt`
+> **`blocklists/domains.txt` and `blocklists/ips.txt` are the only files safe to feed directly into a firewall or DNS sinkhole — they contain verified IOCs only, un-defanged, one per line.**
 
-> **`blocklists/domains.txt` and `blocklists/ips.txt` are the only files safe to feed directly into a firewall or DNS sinkhole** — they contain only IOCs explicitly verified in successfully fetched vendor reports. Unverified lists require additional analyst review before operational use.
+- [blocklists/domains.txt](blocklists/domains.txt) — 53 verified AMOS C2/delivery domains
+- [blocklists/ips.txt](blocklists/ips.txt) — 8 verified AMOS C2/exfiltration IPs
+- [blocklists/unverified-domains.txt](blocklists/unverified-domains.txt) — 1 unverified domain (search-snippet only; do NOT use in production blocklists without independent verification)
+- [blocklists/unverified-ips.txt](blocklists/unverified-ips.txt) — 0 unverified IPs
 
-Data is for defensive DNS/firewall blocking only. All IOCs are explicitly attributed to AMOS / Atomic macOS Stealer or confirmed direct variants in cited vendor reports.
+## Latest Snapshot
+
+See [latest.md](latest.md) for today's full report, or browse [snapshots/](snapshots/) for historical runs.
+
+## Notes
+
+- All blocklist files are **cumulative**: entries are only removed when a successfully fetched report explicitly reports sinkholing or takedown.
+- IOCs sourced only from search-result snippets or blocked fetch attempts are kept in `unverified-*` files and are never promoted to the production blocklists without confirmation.
+- Hashes are tracked in snapshot reports only; no hash blocklist file is maintained (hashes rotate too quickly for a stable blocklist).
