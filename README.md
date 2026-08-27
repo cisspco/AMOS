@@ -1,14 +1,14 @@
 # AMOS / Atomic macOS Stealer — Defensive IOC Repository
 
-**Last updated:** 2026-08-26 UTC (automated daily snapshot)
+**Last updated:** 2026-08-27 UTC (automated daily snapshot)
 
 ## Counts
 | Category | Verified | Unverified |
 |---|---|---|
-| Domains | 53 | 1 |
-| IPs | 8 | 0 |
+| Domains | 133 | 1 |
+| IPs | 10 | 0 |
 | SHA-256 hashes | 4 | 0 |
-| **Total IOCs** | **65** | **1** |
+| **Total IOCs** | **147** | **1** |
 
 ## Blocklist Files (Firewall-Safe)
 
