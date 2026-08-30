@@ -1,42 +1,28 @@
-# AMOS / Atomic macOS Stealer — IOC Repository
+# AMOS / Atomic macOS Stealer — IOC Tracker
 
-**Last updated:** 2026-08-29 UTC (automated daily snapshot)
+**마지막 업데이트 (Last Updated):** 2026-08-30 UTC
 
-## Counts
-| Category | Count |
-|---|---|
-| Verified domains | 146 |
-| Verified IPs | 10 |
-| Unverified domains | 1 |
-| Unverified IPs | 0 |
-| SHA-256 hashes | 4 |
+## 현재 IOC 집계
+| 종류 | 검증됨 | 미검증 |
+|------|--------|--------|
+| 도메인 | 146 | 1 |
+| IP | 10 | 0 |
+| SHA-256 해시 | 4 | 0 |
 
-## Blocklist Files
+## 블록리스트 다운로드 (Raw URLs)
 
-> ⚠️ **`blocklists/domains.txt` and `blocklists/ips.txt` are the only files safe to feed directly into a firewall or DNS sinkhole.** They contain verified IOCs only, un-defanged, one per line.
+> ⚠️ **`blocklists/domains.txt` 및 `blocklists/ips.txt`만 방화벽/DNS 싱크홀에 직접 투입하기에 안전합니다.**
+> `unverified-*` 파일은 검색 스니펫 출처 IOC로 오탐 위험이 있으며 검토 후 사용하십시오.
 
-| File | Description |
-|---|---|
-| [`blocklists/domains.txt`](blocklists/domains.txt) | **Verified** AMOS C2/delivery domains — firewall/sinkhole ready |
-| [`blocklists/ips.txt`](blocklists/ips.txt) | **Verified** AMOS C2 IPs — firewall ready |
-| [`blocklists/unverified-domains.txt`](blocklists/unverified-domains.txt) | Unverified domains (search-snippet only) — review before blocking |
-| [`blocklists/unverified-ips.txt`](blocklists/unverified-ips.txt) | Unverified IPs — review before blocking |
+- **검증된 도메인:** `blocklists/domains.txt`
+- **검증된 IP:** `blocklists/ips.txt`
+- **미검증 도메인:** `blocklists/unverified-domains.txt`
+- **미검증 IP:** `blocklists/unverified-ips.txt`
 
-## Raw Blocklist URLs (for automated import)
+## 스냅샷
+- 최신 전체 보고서: [`latest.md`](latest.md)
+- 일별 아카이브: [`snapshots/`](snapshots/)
 
-```
-https://raw.githubusercontent.com/cisspco/AMOS/main/blocklists/domains.txt
-https://raw.githubusercontent.com/cisspco/AMOS/main/blocklists/ips.txt
-```
-
-## Latest Snapshot
-
-Full daily report with campaign context, persistence artifacts, and source attribution:
-- [`latest.md`](latest.md) — most recent snapshot
-- [`snapshots/`](snapshots/) — full daily history
-
-## Coverage
-
-Tracks **AMOS (Atomic macOS Stealer)** and directly attributed variants only. Sources include Microsoft Security Blog, SANS ISC, Trend Micro, IRU, Darktrace, Brinztech, and active C2 trackers.
-
-All IOCs are defanged in report text; blocklist files contain raw un-defanged values for operational use.
+## 소개
+이 저장소는 AMOS(Atomic macOS Stealer) 및 직접 연관 변종의 활성 C2 인프라를 방어적 차단 목적으로 매일 자동 수집합니다.
+IOC는 공개된 벤더 보고서에서 추출하며, 검증된 IOC(직접 페치 성공)와 미검증 IOC(검색 스니펫 출처)를 분리 관리합니다.
