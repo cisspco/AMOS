@@ -5,10 +5,10 @@
 ## Counts
 | Category | Count |
 |---|---|
-| Verified domains | 146 |
-| Verified IPs | 10 |
-| Unverified domains | 1 |
-| Unverified IPs | 0 |
+| Verified domains | 140 |
+| Verified IPs | 7 |
+| Unverified domains | 7 |
+| Unverified IPs | 3 |
 | SHA-256 hashes | 4 |
 | MD5 hashes | 0 |
 
