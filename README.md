@@ -1,6 +1,6 @@
 # AMOS / Atomic macOS Stealer — IOC Repository
 
-**Last updated:** 2026-09-03 UTC  
+**Last updated:** 2026-09-04 UTC  
 **Verified domains:** 140 | **Verified IPs:** 8 | **Unverified domains:** 7 | **Unverified IPs:** 2 | **Hashes (SHA-256):** 4
 
 This repository contains daily snapshots of indicators of compromise (IOCs) attributed to **AMOS (Atomic macOS Stealer)** and its known variants, maintained for defensive blocking purposes.
