@@ -1,7 +1,7 @@
 # AMOS / Atomic macOS Stealer — IOC Blocklists
 
-**Last updated:** 2026-09-06 UTC  
-**Verified domains:** 140 | **Verified IPs:** 8 | **Unverified domains:** 7 | **Unverified IPs:** 2 | **Hashes (SHA-256):** 4
+**Last updated:** 2026-09-07 UTC  
+**Verified domains:** 140 | **Verified IPs:** 8 | **Unverified domains:** 7 | **Unverified IPs:** 3 | **Hashes (SHA-256):** 4
 
 > ⚠️ `blocklists/domains.txt` and `blocklists/ips.txt` are the **only files safe to feed directly into a firewall or DNS sinkhole**. They contain verified IOCs only, un-defanged, one per line.
 
