@@ -1,32 +1,30 @@
-# AMOS / Atomic macOS Stealer — IOC Blocklists
+# AMOS IOC Repository
 
-**Last updated:** 2026-09-07 UTC  
-**Verified domains:** 140 | **Verified IPs:** 8 | **Unverified domains:** 7 | **Unverified IPs:** 3 | **Hashes (SHA-256):** 4
+**Last updated:** 2026-09-08 UTC
 
-> ⚠️ `blocklists/domains.txt` and `blocklists/ips.txt` are the **only files safe to feed directly into a firewall or DNS sinkhole**. They contain verified IOCs only, un-defanged, one per line.
-
-## Blocklist URLs (raw)
-
-| File | Contents |
+## Counts
+| Category | Count |
 |---|---|
-| [`blocklists/domains.txt`](blocklists/domains.txt) | Verified C2 domains (firewall-safe) |
-| [`blocklists/ips.txt`](blocklists/ips.txt) | Verified C2 IPs (firewall-safe) |
-| [`blocklists/unverified-domains.txt`](blocklists/unverified-domains.txt) | Unverified domains (review before blocking) |
-| [`blocklists/unverified-ips.txt`](blocklists/unverified-ips.txt) | Unverified IPs (review before blocking) |
+| Verified domains | 140 |
+| Verified IPs | 8 |
+| Verified hashes (SHA-256) | 4 |
+| Unverified domains | 7 |
+| Unverified IPs | 3 |
+| **Total IOCs** | **162** |
+
+## Blocklist URLs (raw, for firewall/DNS import)
+
+| File | Description |
+|---|---|
+| [`blocklists/domains.txt`](blocklists/domains.txt) | **VERIFIED** domains — safe to feed directly into a firewall/DNS sinkhole |
+| [`blocklists/ips.txt`](blocklists/ips.txt) | **VERIFIED** IPs — safe to feed directly into a firewall |
+| [`blocklists/unverified-domains.txt`](blocklists/unverified-domains.txt) | Unverified domains (search-snippet sources only) — review before blocking |
+| [`blocklists/unverified-ips.txt`](blocklists/unverified-ips.txt) | Unverified IPs — review before blocking |
+
+> **`blocklists/domains.txt` and `blocklists/ips.txt` are the only files safe to feed directly into a firewall or DNS sinkhole without additional vetting.**
 
 ## Latest Snapshot
+See [`latest.md`](latest.md) for the full current report, or browse [`snapshots/`](snapshots/) for historical daily reports.
 
-See [`latest.md`](latest.md) for the full daily report (Korean, defanged IOCs, campaign summaries, source list).
-
-Snapshots are archived under [`snapshots/`](snapshots/).
-
-## Source basis
-
-Primary verified source: Microsoft Security Blog reports (2026-05-06 and 2026-08-05).  
-Unverified entries sourced from search snippets only — not confirmed by a directly fetched report.
-
-## Notes
-
-- All IOCs are cumulative. Entries are only removed when a source fetched in the same run explicitly reports sinkhole or takedown.
-- An IOC appears in either verified or unverified lists, never both.
-- The proxy egress environment blocks most vendor domains (moonlock.com, hunt.io, sophos.com, darktrace.com, brinztech.com, etc.); Microsoft Security Blog is the consistently reachable source.
+## About
+Daily automated IOC tracking for **AMOS / Atomic macOS Stealer** for defensive blocking purposes. All entries are explicitly attributed to AMOS or known direct variants. IOCs sourced only from search snippets are marked unverified and kept in separate lists.
