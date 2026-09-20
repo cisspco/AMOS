@@ -1,6 +1,6 @@
 # AMOS IOC Tracker
 
-**Last updated:** 2026-09-19 UTC
+**Last updated:** 2026-09-20 UTC
 
 Defensive blocking lists for AMOS / Atomic macOS Stealer infrastructure, updated daily from vendor threat intelligence reports.
 
