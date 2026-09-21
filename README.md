@@ -1,10 +1,7 @@
-# AMOS IOC Tracker
+# AMOS / Atomic macOS Stealer — IOC Tracker
 
-**Last updated:** 2026-09-20 UTC
+**Last updated:** 2026-09-21 UTC
 
-Defensive blocking lists for AMOS / Atomic macOS Stealer infrastructure, updated daily from vendor threat intelligence reports.
-
-## Counts (cumulative, this run)
 | Category | Count |
 |---|---|
 | Verified domains | 143 |
@@ -12,22 +9,22 @@ Defensive blocking lists for AMOS / Atomic macOS Stealer infrastructure, updated
 | Verified SHA-256 hashes | 5 |
 | Unverified domains | 7 |
 | Unverified IPs | 4 |
+| **Total verified IOCs** | **157** |
+| **Total unverified IOCs** | **11** |
 
 ## Blocklist files
 
-> ⚠️ **Only `blocklists/domains.txt` and `blocklists/ips.txt` are safe to feed directly into a firewall or DNS sinkhole.** The `unverified-*` files contain indicators sourced only from search snippets or blocked reports and should be reviewed before operational use.
+> ⚠️ **Only `blocklists/domains.txt` and `blocklists/ips.txt` are safe to feed directly into a firewall or DNS sinkhole.** These files contain verified IOCs only — defanged in reports, raw (un-defanged) here, one entry per line.
 
 | File | Description |
 |---|---|
-| [`blocklists/domains.txt`](blocklists/domains.txt) | Verified AMOS C2/delivery domains — firewall-safe |
-| [`blocklists/ips.txt`](blocklists/ips.txt) | Verified AMOS C2 IPs — firewall-safe |
-| [`blocklists/unverified-domains.txt`](blocklists/unverified-domains.txt) | Unverified domains (review before blocking) |
-| [`blocklists/unverified-ips.txt`](blocklists/unverified-ips.txt) | Unverified IPs (review before blocking) |
+| [`blocklists/domains.txt`](blocklists/domains.txt) | **VERIFIED** AMOS C2/delivery domains — firewall/DNS safe |
+| [`blocklists/ips.txt`](blocklists/ips.txt) | **VERIFIED** AMOS C2 IPs — firewall safe |
+| [`blocklists/unverified-domains.txt`](blocklists/unverified-domains.txt) | Unverified domains (search snippets / blocked fetches) — review before use |
+| [`blocklists/unverified-ips.txt`](blocklists/unverified-ips.txt) | Unverified IPs — review before use |
 
-## Latest snapshot
-See [`latest.md`](latest.md) for the full IOC report including hashes, persistence artifacts, campaign summaries, and sourcing.
+## Raw blocklist URLs (for automation)
 
-## Raw blocklist URLs (for direct import)
 ```
 https://raw.githubusercontent.com/cisspco/AMOS/main/blocklists/domains.txt
 https://raw.githubusercontent.com/cisspco/AMOS/main/blocklists/ips.txt
@@ -35,8 +32,22 @@ https://raw.githubusercontent.com/cisspco/AMOS/main/blocklists/unverified-domain
 https://raw.githubusercontent.com/cisspco/AMOS/main/blocklists/unverified-ips.txt
 ```
 
+## Snapshots
+
+Daily snapshots (Korean, defanged) are in [`snapshots/`](snapshots/). [`latest.md`](latest.md) always mirrors the most recent snapshot.
+
 ## Methodology
-- IOCs are classified **verified** (extracted from a successfully fetched vendor report) or **unverified** (search snippet or blocked fetch only).
-- Blocklists are cumulative — entries are never dropped unless a fetched report explicitly confirms sinkhole/takedown.
-- All IOC mentions in reports are defanged (`example[.]com`); blocklist files contain raw un-defanged values for direct import.
-- Sources prioritized: Microsoft Security Blog, Palo Alto Unit 42, Malwarebytes, Sophos, Jamf, Darktrace, IRU, Moonlock, Intego, CISA.
+
+- IOCs are included only when explicitly attributed to AMOS / Atomic Stealer (or confirmed direct variants).
+- **Verified**: appeared in the body of a successfully fetched vendor report.
+- **Unverified** (⚠️): sourced only from a search-result snippet or a report whose fetch was blocked.
+- Blocklists are cumulative. An entry is removed only when a successfully fetched source explicitly reports it sinkholed or taken down.
+- IOCs that appear in both lists are a bug — an entry promoted from unverified to verified is removed from the unverified file.
+
+## Primary sources
+
+- Microsoft Security Blog (multiple reports, 2026-02 through 2026-08)
+- Unit 42 / Palo Alto Networks (blocked by egress proxy)
+- malware.news (blocked by egress proxy)
+- IRU blog (blocked by egress proxy)
+- CloudSEK (blocked by egress proxy)
