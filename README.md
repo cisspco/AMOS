@@ -1,6 +1,6 @@
 # AMOS / Atomic macOS Stealer — IOC Tracker
 
-**Last updated:** 2026-09-21 UTC
+**Last updated:** 2026-09-22 UTC
 
 | Category | Count |
 |---|---|
