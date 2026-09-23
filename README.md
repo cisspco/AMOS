@@ -1,6 +1,6 @@
 # AMOS / Atomic macOS Stealer — IOC Tracker
 
-**Last updated:** 2026-09-22 UTC
+**Last updated:** 2026-09-23 UTC
 
 | Category | Count |
 |---|---|
@@ -50,4 +50,5 @@ Daily snapshots (Korean, defanged) are in [`snapshots/`](snapshots/). [`latest.m
 - Unit 42 / Palo Alto Networks (blocked by egress proxy)
 - malware.news (blocked by egress proxy)
 - IRU blog (blocked by egress proxy)
-- CloudSEK (blocked by egress proxy)
+- Trend Micro (blocked by egress proxy)
+- CloudSEK (not fetched)
