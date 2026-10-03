@@ -1,44 +1,33 @@
-# AMOS IOC Feed — cisspco/AMOS
+# AMOS / Atomic macOS Stealer — IOC Tracking Repository
 
-Defensive-blocking IOC repository for **AMOS / Atomic macOS Stealer** infrastructure.  
-Updated daily by automated scheduled task.
+**Last updated:** 2026-10-03 UTC (automated daily snapshot)
 
-**Last updated:** 2026-10-02 UTC
-
-## Counts
-| Category | Count |
-|---|---|
-| Verified domains | 143 |
-| Verified IPs | 9 |
-| Verified SHA-256 hashes | 5 |
-| Unverified domains | 13 |
-| Unverified IPs | 8 |
-
-## Blocklist files
-
-| File | Description | Safe for firewall? |
+| Category | Verified | Unverified |
 |---|---|---|
-| `blocklists/domains.txt` | Verified domains, un-defanged, sorted | **YES** |
-| `blocklists/ips.txt` | Verified IPs, un-defanged, sorted | **YES** |
-| `blocklists/unverified-domains.txt` | Unverified domains (snippet-only) | Review first |
-| `blocklists/unverified-ips.txt` | Unverified IPs (snippet-only) | Review first |
+| Domains | 148 | 14 |
+| IPs | 9 | 9 |
+| SHA-256 hashes | 5 | 0 |
+| **Total** | **162** | **23** |
 
-> **`blocklists/domains.txt` and `blocklists/ips.txt` are the only files safe to feed directly into a firewall or DNS sinkhole.**  
-> Unverified lists require manual review before operational use.
+## Raw blocklist URLs
 
-## Raw blocklist URLs (GitHub)
-- Domains: `https://raw.githubusercontent.com/cisspco/AMOS/main/blocklists/domains.txt`
-- IPs: `https://raw.githubusercontent.com/cisspco/AMOS/main/blocklists/ips.txt`
-- Unverified domains: `https://raw.githubusercontent.com/cisspco/AMOS/main/blocklists/unverified-domains.txt`
-- Unverified IPs: `https://raw.githubusercontent.com/cisspco/AMOS/main/blocklists/unverified-ips.txt`
+| File | Description |
+|---|---|
+| [`blocklists/domains.txt`](blocklists/domains.txt) | Verified C2/delivery domains — safe for firewall/DNS sinkhole |
+| [`blocklists/ips.txt`](blocklists/ips.txt) | Verified C2 IPs — safe for firewall |
+| [`blocklists/unverified-domains.txt`](blocklists/unverified-domains.txt) | Unverified domains — review before blocking |
+| [`blocklists/unverified-ips.txt`](blocklists/unverified-ips.txt) | Unverified IPs — review before blocking |
 
-## Snapshots
-Daily snapshots (Korean, defanged) are stored in `snapshots/YYYY-MM-DD.md`.  
-The most recent snapshot is always mirrored at `latest.md`.
+> **`blocklists/domains.txt` and `blocklists/ips.txt` are the only files safe to feed directly into a firewall or DNS sinkhole.** The unverified files contain indicators sourced only from search snippets and should be validated before operational use.
 
-## Verification levels
-- **Verified** — IOC appeared in the body of a successfully fetched vendor report.
-- **Unverified** ⚠️ — IOC sourced only from a search-result snippet or a report whose fetch was blocked. Never placed in `domains.txt` / `ips.txt`.
+## Latest snapshot
 
-## Primary sources tracked
-Microsoft Security Blog, Darktrace, IRU, Unit 42 (Palo Alto), Moonlock, Sophos, Hunt.io, CloudSEK, Trend Micro, Ransom-ISAC
+[`latest.md`](latest.md) — updated every run with the full Korean-language IOC report (defanged), campaign summaries, and blocklist-ready code blocks.
+
+Historical snapshots are in [`snapshots/`](snapshots/).
+
+## Coverage
+
+This repository tracks **Atomic macOS Stealer (AMOS)** and its direct variants (Odyssey when explicitly linked). Indicators are classified as **verified** (appeared in the body of a successfully fetched vendor report) or **unverified** (search snippet only or fetch-blocked source). Only verified IOCs appear in `blocklists/domains.txt` and `blocklists/ips.txt`.
+
+Primary verified source: Microsoft Security Blog (2026-02-02, 2026-05-06, 2026-08-05).
