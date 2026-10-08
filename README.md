@@ -1,32 +1,43 @@
-# AMOS / Atomic macOS Stealer — Defensive IOC Repository
+# AMOS IOC Tracker
 
-**Last updated:** 2026-10-07 UTC
+**Last updated:** 2026-10-08 UTC  
+**Verified domains:** 148 | **Verified IPs:** 9 | **Verified SHA-256 hashes:** 5  
+**Unverified domains:** 14 | **Unverified IPs:** 10 | **Unverified SHA-256 hashes:** 3
 
-## Counts
-| Category | Verified | Unverified |
-|---|---|---|
-| Domains | 148 | 14 |
-| IPs | 9 | 9 |
-| SHA-256 hashes | 5 | 3 |
-| **Total** | **162** | **26** |
+Automated daily snapshot of Atomic macOS Stealer (AMOS) indicators of compromise for defensive blocking purposes.
 
-## Blocklist URLs (raw, suitable for firewall/DNS import)
+## Blocklist files
 
-> **`blocklists/domains.txt` and `blocklists/ips.txt` are the only files safe to feed directly into a firewall or DNS sinkhole.** They contain verified IOCs only, un-defanged, one entry per line, sorted and deduplicated.
+| File | Contents | Safe for firewall/DNS sinkhole? |
+|------|----------|--------------------------------|
+| `blocklists/domains.txt` | Verified AMOS domains, un-defanged, sorted | **YES** |
+| `blocklists/ips.txt` | Verified AMOS IPs, un-defanged, sorted | **YES** |
+| `blocklists/unverified-domains.txt` | Unverified domains (search snippets / blocked fetches) | NO — review before use |
+| `blocklists/unverified-ips.txt` | Unverified IPs (search snippets / blocked fetches) | NO — review before use |
 
-| File | Contents |
-|---|---|
-| [`blocklists/domains.txt`](blocklists/domains.txt) | Verified C2/delivery domains — firewall-ready |
-| [`blocklists/ips.txt`](blocklists/ips.txt) | Verified C2 IPs — firewall-ready |
-| [`blocklists/unverified-domains.txt`](blocklists/unverified-domains.txt) | Unverified domains (snippet-sourced only) — review before blocking |
-| [`blocklists/unverified-ips.txt`](blocklists/unverified-ips.txt) | Unverified IPs (snippet-sourced only) — review before blocking |
+> **`blocklists/domains.txt` and `blocklists/ips.txt` are the only files safe to feed directly into a firewall or DNS sinkhole.** All entries are sourced from successfully fetched vendor reports and explicitly attributed to AMOS/Atomic Stealer.
 
-## Latest Snapshot
+## Raw blocklist URLs
 
-See [`latest.md`](latest.md) for the full daily report including campaign summaries, file hashes, persistence artifacts, and source attributions.
+- Verified domains: `https://raw.githubusercontent.com/cisspco/AMOS/main/blocklists/domains.txt`
+- Verified IPs: `https://raw.githubusercontent.com/cisspco/AMOS/main/blocklists/ips.txt`
+- Unverified domains: `https://raw.githubusercontent.com/cisspco/AMOS/main/blocklists/unverified-domains.txt`
+- Unverified IPs: `https://raw.githubusercontent.com/cisspco/AMOS/main/blocklists/unverified-ips.txt`
 
-Historical snapshots are in [`snapshots/`](snapshots/).
+## Snapshots
 
-## About
+Daily snapshots are stored in `snapshots/YYYY-MM-DD.md`. The most recent snapshot is always mirrored as `latest.md`.
 
-IOCs are collected daily via automated web search and vendor report analysis. Only IOCs explicitly attributed to AMOS / Atomic macOS Stealer (or closely linked variants such as Odyssey when explicitly stated) are included. Entries are classified as **verified** (appeared in the body of a successfully fetched report) or **unverified** (sourced only from a search-result snippet or from a report whose fetch was blocked by the egress proxy). Verified and unverified IOCs are never mixed in the same blocklist file.
+## IOC classification
+
+- **verified** — indicator appeared in the body of a successfully fetched vendor report
+- **unverified** ⚠️ — indicator came only from a search-result snippet or a report whose fetch was blocked; confirm before blocking
+
+## Key campaigns tracked
+
+- **2026-10-02** Claude Code impersonation AMOS campaign (ClickFix, Odyssey variant) — unverified
+- **2026-08-05** ClickFix gate-cloaking campaign (Microsoft analysis) — verified
+- **2026-07-28+** WordPress compromise ClickFix AMOS campaign (Ransom-ISAC) — partially unverified
+- **2026-05-06** Loader/Script/Helper triple campaign (Microsoft analysis) — verified
+- **2026-02-02** alli-ai fake AI tool AMOS campaign (Microsoft analysis) — verified
+- **2026-02** ClawHavoc / ClawHub AI marketplace campaign — unverified
