@@ -1,43 +1,45 @@
-# AMOS IOC Tracker
+# AMOS IOC Repository
 
-**Last updated:** 2026-10-08 UTC  
-**Verified domains:** 148 | **Verified IPs:** 9 | **Verified SHA-256 hashes:** 5  
-**Unverified domains:** 14 | **Unverified IPs:** 10 | **Unverified SHA-256 hashes:** 3
+**Last updated:** 2026-10-09 UTC
 
-Automated daily snapshot of Atomic macOS Stealer (AMOS) indicators of compromise for defensive blocking purposes.
+## Counts
+| Category | Count |
+|---|---|
+| Verified domains | 148 |
+| Verified IPs | 9 |
+| Verified SHA-256 hashes | 5 |
+| Unverified domains | 18 |
+| Unverified IPs | 12 |
+| Unverified SHA-256 hashes | 3 |
 
-## Blocklist files
+## Blocklist URLs (raw, GitHub)
 
-| File | Contents | Safe for firewall/DNS sinkhole? |
-|------|----------|--------------------------------|
-| `blocklists/domains.txt` | Verified AMOS domains, un-defanged, sorted | **YES** |
-| `blocklists/ips.txt` | Verified AMOS IPs, un-defanged, sorted | **YES** |
-| `blocklists/unverified-domains.txt` | Unverified domains (search snippets / blocked fetches) | NO — review before use |
-| `blocklists/unverified-ips.txt` | Unverified IPs (search snippets / blocked fetches) | NO — review before use |
+> ⚠️ `blocklists/domains.txt` and `blocklists/ips.txt` are the **only** files safe to feed directly into a firewall or DNS sinkhole. All other blocklist files contain unverified indicators and must be reviewed before operational use.
 
-> **`blocklists/domains.txt` and `blocklists/ips.txt` are the only files safe to feed directly into a firewall or DNS sinkhole.** All entries are sourced from successfully fetched vendor reports and explicitly attributed to AMOS/Atomic Stealer.
-
-## Raw blocklist URLs
-
-- Verified domains: `https://raw.githubusercontent.com/cisspco/AMOS/main/blocklists/domains.txt`
-- Verified IPs: `https://raw.githubusercontent.com/cisspco/AMOS/main/blocklists/ips.txt`
-- Unverified domains: `https://raw.githubusercontent.com/cisspco/AMOS/main/blocklists/unverified-domains.txt`
-- Unverified IPs: `https://raw.githubusercontent.com/cisspco/AMOS/main/blocklists/unverified-ips.txt`
+- `blocklists/domains.txt` — verified domains, sorted, deduped, un-defanged
+- `blocklists/ips.txt` — verified IPs, sorted, deduped, un-defanged
+- `blocklists/unverified-domains.txt` — unverified domains (review before use)
+- `blocklists/unverified-ips.txt` — unverified IPs (review before use)
 
 ## Snapshots
 
-Daily snapshots are stored in `snapshots/YYYY-MM-DD.md`. The most recent snapshot is always mirrored as `latest.md`.
+Daily full snapshots are in `snapshots/YYYY-MM-DD.md`. The most recent snapshot is always mirrored to `latest.md`.
 
-## IOC classification
+## Evidence Levels
 
-- **verified** — indicator appeared in the body of a successfully fetched vendor report
-- **unverified** ⚠️ — indicator came only from a search-result snippet or a report whose fetch was blocked; confirm before blocking
+- **verified** — IOC appeared in the body of a successfully fetched vendor report
+- **unverified** ⚠️ — IOC sourced only from a search-result snippet or from a report whose fetch was blocked
 
-## Key campaigns tracked
+## Recent Activity
 
-- **2026-10-02** Claude Code impersonation AMOS campaign (ClickFix, Odyssey variant) — unverified
-- **2026-08-05** ClickFix gate-cloaking campaign (Microsoft analysis) — verified
-- **2026-07-28+** WordPress compromise ClickFix AMOS campaign (Ransom-ISAC) — partially unverified
-- **2026-05-06** Loader/Script/Helper triple campaign (Microsoft analysis) — verified
-- **2026-02-02** alli-ai fake AI tool AMOS campaign (Microsoft analysis) — verified
-- **2026-02** ClawHavoc / ClawHub AI marketplace campaign — unverified
+AMOS (Atomic macOS Stealer) remains highly active in October 2026. Key ongoing campaigns:
+- **Claude Code impersonation (2026-10-02):** Malicious ads posing as Claude Code delivering AMOS via ClickFix Terminal paste trick.
+- **macOS ClickFix fingerprinting campaign (2026-08+):** 1,650+ compromised WordPress sites, 154 rotating C2 hostnames, server-side fingerprint gating to evade analysis.
+- **Spectrum-themed ClickFix (Russian operators):** panel-spectrum[.]net, homebrewrp[.]com, brewory[.]com infrastructure.
+- **Report-URI loader chain (~2026-09-25):** ganalytics-tracker-js injection pattern, AS210644 Aeza staging (45.150.33[.]128), telemetry at 95.163.153[.]80:8133/api/t.
+
+## Notes
+
+- Verified blocklists are **cumulative** — entries are only removed when a fetched report explicitly reports sinkholing or takedown.
+- IOC infrastructure rotates frequently; behavioral/path-based detections are more durable than static domain/IP lists.
+- Primary verified source: [Microsoft Security Blog](https://www.microsoft.com/en-us/security/blog/)
