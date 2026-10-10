@@ -1,45 +1,45 @@
-# AMOS IOC Repository
+# AMOS IOC Tracker
 
-**Last updated:** 2026-10-09 UTC
+Defensive IOC feed for **AMOS / Atomic macOS Stealer** and direct variants (Odyssey).  
+Updated daily by automated snapshot. All times UTC.
+
+**Last updated:** 2026-10-10 UTC
 
 ## Counts
-| Category | Count |
+| Category | Verified | Unverified |
+|---|---|---|
+| Domains | 148 | 24 |
+| IPs | 9 | 13 |
+| SHA-256 hashes | 5 | 3 |
+| **Total** | **162** | **40** |
+
+## Files
+
+| File | Description |
 |---|---|
-| Verified domains | 148 |
-| Verified IPs | 9 |
-| Verified SHA-256 hashes | 5 |
-| Unverified domains | 18 |
-| Unverified IPs | 12 |
-| Unverified SHA-256 hashes | 3 |
+| `latest.md` | Full snapshot with context, defanged IOCs, campaign summaries |
+| `snapshots/YYYY-MM-DD.md` | Archived daily snapshots |
+| `blocklists/domains.txt` | **Verified** domains — safe to feed directly into a firewall/DNS sinkhole |
+| `blocklists/ips.txt` | **Verified** IPs — safe to feed directly into a firewall |
+| `blocklists/unverified-domains.txt` | Unverified domains (search-snippet only) — review before blocking |
+| `blocklists/unverified-ips.txt` | Unverified IPs (search-snippet only) — review before blocking |
 
-## Blocklist URLs (raw, GitHub)
+> **`blocklists/domains.txt` and `blocklists/ips.txt` are the only files safe to feed directly into a firewall or DNS sinkhole without manual review.**  
+> All entries in these two files appeared in the body of a successfully fetched vendor report.  
+> Entries in `unverified-*.txt` came from search-result snippets only and have not been independently confirmed.
 
-> ⚠️ `blocklists/domains.txt` and `blocklists/ips.txt` are the **only** files safe to feed directly into a firewall or DNS sinkhole. All other blocklist files contain unverified indicators and must be reviewed before operational use.
+## Raw blocklist URLs (for firewall automation)
 
-- `blocklists/domains.txt` — verified domains, sorted, deduped, un-defanged
-- `blocklists/ips.txt` — verified IPs, sorted, deduped, un-defanged
-- `blocklists/unverified-domains.txt` — unverified domains (review before use)
-- `blocklists/unverified-ips.txt` — unverified IPs (review before use)
+```
+https://raw.githubusercontent.com/cisspco/AMOS/main/blocklists/domains.txt
+https://raw.githubusercontent.com/cisspco/AMOS/main/blocklists/ips.txt
+```
 
-## Snapshots
+## IOC Classification
 
-Daily full snapshots are in `snapshots/YYYY-MM-DD.md`. The most recent snapshot is always mirrored to `latest.md`.
+- **verified** — appeared in the body of a successfully fetched vendor report
+- **unverified** — came from a search-result snippet or a report whose fetch was blocked
 
-## Evidence Levels
-
-- **verified** — IOC appeared in the body of a successfully fetched vendor report
-- **unverified** ⚠️ — IOC sourced only from a search-result snippet or from a report whose fetch was blocked
-
-## Recent Activity
-
-AMOS (Atomic macOS Stealer) remains highly active in October 2026. Key ongoing campaigns:
-- **Claude Code impersonation (2026-10-02):** Malicious ads posing as Claude Code delivering AMOS via ClickFix Terminal paste trick.
-- **macOS ClickFix fingerprinting campaign (2026-08+):** 1,650+ compromised WordPress sites, 154 rotating C2 hostnames, server-side fingerprint gating to evade analysis.
-- **Spectrum-themed ClickFix (Russian operators):** panel-spectrum[.]net, homebrewrp[.]com, brewory[.]com infrastructure.
-- **Report-URI loader chain (~2026-09-25):** ganalytics-tracker-js injection pattern, AS210644 Aeza staging (45.150.33[.]128), telemetry at 95.163.153[.]80:8133/api/t.
-
-## Notes
-
-- Verified blocklists are **cumulative** — entries are only removed when a fetched report explicitly reports sinkholing or takedown.
-- IOC infrastructure rotates frequently; behavioral/path-based detections are more durable than static domain/IP lists.
-- Primary verified source: [Microsoft Security Blog](https://www.microsoft.com/en-us/security/blog/)
+## Sources (primary verified)
+- [Microsoft Security Blog — ClickFix macOS (Aug 2026)](https://www.microsoft.com/en-us/security/blog/2026/08/05/macos-clickfix-campaign-learned-hide/)
+- [Microsoft Security Blog — Fake macOS utilities lures (May 2026)](https://www.microsoft.com/en-us/security/blog/2026/05/06/clickfix-campaign-uses-fake-macos-utilities-lures-deliver-infostealers/)
