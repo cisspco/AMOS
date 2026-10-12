@@ -1,8 +1,8 @@
-# AMOS IOC Snapshot — 2026-10-11 UTC
+# AMOS IOC Snapshot — 2026-10-12 UTC
 
 ## 수집 상태
 - 페치 성공: [From open lures to cloaked gates: How a macOS ClickFix campaign learned to hide](https://www.microsoft.com/en-us/security/blog/2026/08/05/macos-clickfix-campaign-learned-hide/) — 2026-08-05
-- 페치 차단(EGRESS_BLOCKED): dev.to, ransom-isac.org, unit42.paloaltonetworks.com, moonlock.com
+- 페치 차단(EGRESS_BLOCKED): dev.to, darktrace.com, unit42.paloaltonetworks.com, ransom-isac.org
 - 검증된 IOC: 162개 (도메인 148 + IP 9 + SHA-256 5) / 미검증 IOC: 42개 (도메인 24 + IP 15 + SHA-256 3)
 
 ## 활성 C2 도메인 (148)
@@ -235,7 +235,7 @@
 - 95.163.153[.]80 ⚠️ (미검증) — ClickFix AMOS 로더 텔레메트리 엔드포인트 :8133/api/t (blog.report-uri.com 검색 스니펫 — 페치 차단)
 - 95.164.53[.]3 ⚠️ (미검증) — Odyssey/AMOS 변종 하드코딩 C2 (/contact 엔드포인트), 2026-10-02 dev.to 분석 및 Darktrace 관측 (검색 스니펫 — 페치 차단)
 - 161.35.146[.]120 ⚠️ (미검증) — AMOS C2, 2026-08-05 및 2026-09-10 감염 시 HTTP POST 수신 (검색 스니펫 — 페치 차단)
-- 178.62.250[.]99 ⚠️ (미검증) — AMOS C2, 포트 80 HTTP 하드코딩, DigitalOcean VPS (검색 스니펫 — 페치 차단)
+- 178.62.250[.]99 ⚠️ (미검증) — AMOS C2, 포트 80 HTTP 하드코딩, DigitalOcean VPS (검색 스니펫)
 - 188.166.78[.]138 ⚠️ (미검증) — AMOS C2, 2026-07-31 감염 시 트래픽 수신 (검색 스니펫)
 
 ## 최근 캠페인 요약
@@ -265,10 +265,10 @@ Microsoft가 2026-02-02에 분석. 가짜 AI 도구 설치 프로그램으로 �
 가짜 'macOS toolkit' 페이지에서 Base64/GZIP 압축 Zsh 스크립트를 터미널 복사-붙여넣기로 실행 유도. 브라우저 자격증명, 암호화폐 지갑(Binance, TonKeeper), Telegram 데이터, AWS/Docker/gcloud 설정 파일 탈취. C2: 188.166.78[.]138(2026-07-31), 161.35.146[.]120(2026-08-05, 2026-09-10). 소스 페치 차단으로 미검증.
 
 ### LeaseWeb 서브넷 45.94.47.0/24 집중 관측 (지속)
-검색 스니펫 여러 출처에서 LeaseWeb Netherlands (AS60781) 서브넷 내 복수 IP (45.94.47.144~158, 45.94.47.211)가 AMOS C2로 관측. 금일 신규 추가: 45.94.47[.]145, 45.94.47[.]147(infostealers.com 참조). 서브넷 전반 차단 고려 권장.
+검색 스니펫 여러 출처에서 LeaseWeb Netherlands (AS60781) 서브넷 내 복수 IP (45.94.47.144~158, 45.94.47.211)가 AMOS C2로 관측. 서브넷 전반 차단 고려 권장.
 
 ## 이번 실행 변경사항
-- 신규: 45.94.47[.]145 ⚠️ (미검증 IP) — AS60781 LeaseWeb, AMOS 유출 IP (infostealers.com 검색 스니펫); 45.94.47[.]147 ⚠️ (미검증 IP) — AS60781 LeaseWeb, AMOS 유출 IP (infostealers.com 검색 스니펫) — 미검증 2개 신규
+- 신규: 없음
 - 제거: 없음
 - 승격(미검증→검증): 없음
 

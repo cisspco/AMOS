@@ -1,6 +1,6 @@
 # AMOS IOC Repository
 
-**Last updated:** 2026-10-11 UTC
+**Last updated:** 2026-10-12 UTC
 
 Defensive blocking indicators for **AMOS / Atomic macOS Stealer** and known direct variants (Odyssey). Collected daily from vendor reports and threat intelligence feeds.
 
