@@ -1,43 +1,42 @@
-# AMOS / Atomic macOS Stealer IOC Repository
+# AMOS IOC Repository
 
-**Last updated:** 2026-10-13 UTC
+**Last updated:** 2026-10-14 UTC
 
 ## Counts
-| Category | Verified | Unverified |
-|---|---|---|
-| Domains | 148 | 24 |
-| IPs | 9 | 15 |
-| SHA-256 hashes | 5 | 3 |
-| **Total IOCs** | **162** | **42** |
+| Category | Count |
+|---|---|
+| Verified domains | 148 |
+| Verified IPs | 9 |
+| Verified SHA-256 hashes | 5 |
+| Unverified domains | 26 |
+| Unverified IPs | 15 |
+| Unverified SHA-256 hashes | 3 |
 
 ## Blocklist Files
 
-> ⚠️ Only `blocklists/domains.txt` and `blocklists/ips.txt` are safe to feed directly into a firewall or DNS sinkhole. These contain **verified** entries only — each indicator appeared in the body of a successfully fetched vendor report.
-
-| File | Description | Raw URL |
+| File | Description | Safe for firewall/DNS? |
 |---|---|---|
-| `blocklists/domains.txt` | Verified domains — un-defanged, sorted, deduped | [domains.txt](blocklists/domains.txt) |
-| `blocklists/ips.txt` | Verified IPs — un-defanged, sorted, deduped | [ips.txt](blocklists/ips.txt) |
-| `blocklists/unverified-domains.txt` | Unverified domains (search snippet only) | [unverified-domains.txt](blocklists/unverified-domains.txt) |
-| `blocklists/unverified-ips.txt` | Unverified IPs (search snippet only) | [unverified-ips.txt](blocklists/unverified-ips.txt) |
+| [`blocklists/domains.txt`](blocklists/domains.txt) | Verified C2 domains, un-defanged, sorted | **YES** |
+| [`blocklists/ips.txt`](blocklists/ips.txt) | Verified C2 IPs, un-defanged, sorted | **YES** |
+| [`blocklists/unverified-domains.txt`](blocklists/unverified-domains.txt) | Unverified domains (search snippets only) | Review before use |
+| [`blocklists/unverified-ips.txt`](blocklists/unverified-ips.txt) | Unverified IPs (search snippets only) | Review before use |
 
-## Daily Snapshots
+> **`blocklists/domains.txt` and `blocklists/ips.txt` are the only files safe to feed directly into a firewall or DNS sinkhole without manual review.** All other files contain unverified indicators sourced from search snippets where the primary report could not be fetched due to egress restrictions.
 
-Full per-run reports are in `snapshots/YYYY-MM-DD.md`. The most recent snapshot is always mirrored to `latest.md`.
+## Raw Blocklist URLs (GitHub raw)
 
-## Methodology
+- Verified domains: `https://raw.githubusercontent.com/cisspco/AMOS/main/blocklists/domains.txt`
+- Verified IPs: `https://raw.githubusercontent.com/cisspco/AMOS/main/blocklists/ips.txt`
+- Unverified domains: `https://raw.githubusercontent.com/cisspco/AMOS/main/blocklists/unverified-domains.txt`
+- Unverified IPs: `https://raw.githubusercontent.com/cisspco/AMOS/main/blocklists/unverified-ips.txt`
 
-Each run:
-1. Runs 5 parallel web searches for AMOS/Atomic Stealer IOCs
-2. Attempts to fetch up to 5 vendor reports (prioritising last 30–60 days)
-3. Classifies IOCs as **verified** (fetched report body) or **unverified** (search snippet / blocked fetch)
-4. Cumulatively merges new findings into blocklists — entries are never removed unless a fetched report confirms sinkhole/takedown
-5. Commits snapshot + updated blocklists to this repository
+## Latest Full Snapshot
 
-## Primary Sources
+See [`latest.md`](latest.md) for the most recent full IOC report including campaign summaries, persistence artifacts, and source attribution.
 
-- Microsoft Security Blog (2026-05-06, 2026-08-05) — fetched ✓
-- Ransom-ISAC (2026-07+) — blocked by egress proxy
-- Palo Alto Unit 42 (2026-09-16) — blocked by egress proxy
-- Darktrace (2026) — blocked by egress proxy
-- dev.to incident report (2026-10-02) — blocked by egress proxy
+## Purpose
+
+This repository tracks **AMOS (Atomic macOS Stealer)** infrastructure for defensive blocking purposes. Updated daily via automated snapshot. IOCs are classified as **verified** (body of a successfully fetched vendor report) or **unverified** (search snippet / blocked fetch only).
+
+## Sources
+Primary: Microsoft Security Blog (fetched). Secondary (blocked/snippets): dev.to, Darktrace, Unit 42, ransom-isac.org, CloudSEK, Moonlock, Broadcom, IRU, report-uri.com, cybersecuritynews.com, and others.
