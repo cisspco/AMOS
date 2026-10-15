@@ -1,6 +1,6 @@
 # AMOS IOC Repository
 
-**Last updated:** 2026-10-14 UTC
+**Last updated:** 2026-10-15 UTC
 
 ## Counts
 | Category | Count |
@@ -8,7 +8,7 @@
 | Verified domains | 148 |
 | Verified IPs | 9 |
 | Verified SHA-256 hashes | 5 |
-| Unverified domains | 26 |
+| Unverified domains | 27 |
 | Unverified IPs | 15 |
 | Unverified SHA-256 hashes | 3 |
 
