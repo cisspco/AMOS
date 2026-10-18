@@ -1,8 +1,8 @@
-# AMOS IOC Snapshot — 2026-10-17 UTC
+# AMOS IOC Snapshot — 2026-10-18 UTC
 
 ## 수집 상태
-- 페치 성공: [From open lures to cloaked gates: How a macOS ClickFix campaign learned to hide](https://www.microsoft.com/en-us/security/blog/2026/08/05/macos-clickfix-campaign-learned-hide/) — 2026-08-05
-- 페치 차단(EGRESS_BLOCKED): unit42.paloaltonetworks.com, ransom-isac.org, darktrace.com, dev.to
+- 페치 성공: [From open lures to cloaked gates: How a macOS ClickFix campaign learned to hide](https://www.microsoft.com/en-us/security/blog/2026/08/05/macos-clickfix-campaign-learned-hide/) — 2026-08-05, [ClickFix campaign uses fake macOS utilities lures to deliver infostealers](https://www.microsoft.com/en-us/security/blog/2026/05/06/clickfix-campaign-uses-fake-macos-utilities-lures-deliver-infostealers/) — 2026-05-06
+- 페치 차단(EGRESS_BLOCKED): unit42.paloaltonetworks.com, ransom-isac.org, moonlock.com
 - 검증된 IOC: 162개 (도메인 148 + IP 9 + SHA-256 5) / 미검증 IOC: 45개 (도메인 27 + IP 15 + SHA-256 3)
 
 ## 활성 C2 도메인 (148)
@@ -274,7 +274,7 @@ Microsoft가 2026-02-02에 분석. 가짜 AI 도구 설치 프로그램으로 �
 검색 스니펫 여러 출처에서 LeaseWeb Netherlands (AS60781) 서브넷 내 복수 IP (45.94.47.144~158, 45.94.47.211)가 AMOS C2로 관측. 서브넷 전반 차단 고려 권장.
 
 ## 이번 실행 변경사항
-- 신규: 없음 (Microsoft 2026-08-05 페치 성공, 17개 도메인 모두 기존 목록에 존재)
+- 신규: 없음 (Microsoft 2026-08-05 및 2026-05-06 페치 성공 — 모든 IOC 기존 목록에 존재)
 - 제거: 없음
 - 승격(미검증→검증): 없음
 
@@ -447,7 +447,7 @@ yablochnisok.com
 
 ## 출처
 - [From open lures to cloaked gates: How a macOS ClickFix campaign learned to hide](https://www.microsoft.com/en-us/security/blog/2026/08/05/macos-clickfix-campaign-learned-hide/) — 2026-08-05 — fetched
-- [ClickFix campaign uses fake macOS utilities lures to deliver infostealers](https://www.microsoft.com/en-us/security/blog/2026/05/06/clickfix-campaign-uses-fake-macos-utilities-lures-deliver-infostealers/) — 2026-05-06 — fetched (prior run)
+- [ClickFix campaign uses fake macOS utilities lures to deliver infostealers](https://www.microsoft.com/en-us/security/blog/2026/05/06/clickfix-campaign-uses-fake-macos-utilities-lures-deliver-infostealers/) — 2026-05-06 — fetched
 - [2026-10-02: Atomic macOS (AMOS) Stealer infection from malicious ad impersonating Claude Code](https://dev.to/mark0_617b45cda9782a/2026-10-02-atomic-macos-amos-stealer-infection-from-malicious-ad-impersonating-claude-code-1668) — 2026-10-02 — blocked
 - [Atomic macOS (AMOS) Stealer Activity](https://unit42.paloaltonetworks.com/atomic-macos-amos-stealer-activity/) — 2026-09-16 — blocked
 - [Chasing a ClickFix Campaign From One Domain to a macOS Stealer](https://blog.report-uri.com/chasing-a-clickfix-campaign-from-one-domain-to-a-macos-stealer/) — ~2026-09-25 — blocked
