@@ -1,8 +1,8 @@
-# AMOS IOC Snapshot — 2026-10-19 UTC
+# AMOS IOC Snapshot — 2026-10-20 UTC
 
 ## 수집 상태
 - 페치 성공: [From open lures to cloaked gates: How a macOS ClickFix campaign learned to hide](https://www.microsoft.com/en-us/security/blog/2026/08/05/macos-clickfix-campaign-learned-hide/) — 2026-08-05
-- 페치 차단(EGRESS_BLOCKED): unit42.paloaltonetworks.com, dev.to, blog.report-uri.com, hunt.io
+- 페치 차단(EGRESS_BLOCKED): unit42.paloaltonetworks.com, dev.to, ransom-isac.org, hunt.io, www.catonetworks.com, moonlock.com, cybersecuritynews.com, www.darktrace.com, www.broadcom.com
 - 검증된 IOC: 162개 (도메인 148 + IP 9 + SHA-256 5) / 미검증 IOC: 45개 (도메인 27 + IP 15 + SHA-256 3)
 
 ## 활성 C2 도메인 (148)
@@ -274,7 +274,7 @@ Microsoft가 2026-02-02에 분석. 가짜 AI 도구 설치 프로그램으로 �
 검색 스니펫 여러 출처에서 LeaseWeb Netherlands (AS60781) 서브넷 내 복수 IP (45.94.47.144~158, 45.94.47.211)가 AMOS C2로 관측. 서브넷 전반 차단 고려 권장.
 
 ## 이번 실행 변경사항
-- 신규: 없음 (Microsoft 2026-08-05 페치 성공 — 모든 17개 ClickFix 도메인이 기존 검증 목록에 존재)
+- 신규: 없음 (이번 실행에서 접근 가능한 Microsoft 2026-08-05 보고서의 17개 ClickFix 도메인이 모두 기존 검증 목록에 존재함. 신규 접근 가능한 보고서 없음)
 - 제거: 없음
 - 승격(미검증→검증): 없음
 
