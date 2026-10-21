@@ -1,14 +1,14 @@
 # AMOS / Atomic macOS Stealer — IOC Tracker
 
-**Last updated:** 2026-10-20 UTC (automated daily snapshot)
+**Last updated:** 2026-10-21 UTC (automated daily snapshot)
 
 ## Counts
 | Category | Verified | Unverified |
 |---|---|---|
 | Domains | 148 | 27 |
-| IPs | 9 | 15 |
+| IPs | 9 | 17 |
 | SHA-256 hashes | 5 | 3 |
-| **Total IOCs** | **162** | **45** |
+| **Total IOCs** | **162** | **47** |
 
 ## Blocklist files (raw, firewall-ready)
 
