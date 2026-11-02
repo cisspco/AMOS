@@ -1,10 +1,10 @@
-# AMOS IOC Snapshot — 2026-10-25 UTC
+# AMOS IOC Snapshot — 2026-11-02 UTC
 
 ## 수집 상태
-- 페치 성공: [From open lures to cloaked gates: How a macOS ClickFix campaign learned to hide](https://www.microsoft.com/en-us/security/blog/2026/08/05/macos-clickfix-campaign-learned-hide/) — 2026-08-05
-- 페치 차단(EGRESS_BLOCKED): dev.to, unit42.paloaltonetworks.com, ransom-isac.org, hunt.io, blog.report-uri.com, moonlock.com, www.cloudsek.com, www.broadcom.com, cybersecuritynews.com
-- 검색 쿼리: "AMOS Atomic macOS Stealer C2 IOC October 2026", "Atomic Stealer new domain IP recent campaign 2026", "AMOS ClickFix campaign indicators of compromise", '"Atomic Stealer" OR "AMOS" infrastructure 2026', "macOS infostealer C2 domain takedown 2026"
-- 검증된 IOC: 162개 (도메인 148 + IP 9 + SHA-256 5) / 미검증 IOC: 47개 (도메인 27 + IP 17 + SHA-256 3)
+- 페치 성공: 없음 (모든 벤더 도메인 EGRESS_BLOCKED — DNS 해석 실패)
+- 페치 차단(EGRESS_BLOCKED): unit42.paloaltonetworks.com, ransom-isac.org, moonlock.com, www.trendmicro.com, www.broadcom.com
+- 검색 쿼리: "AMOS Atomic macOS Stealer C2 IOC November 2026", "Atomic Stealer new domain IP recent campaign 2026", "AMOS ClickFix campaign indicators of compromise", '"Atomic Stealer" OR "AMOS" infrastructure 2026', "macOS infostealer C2 domain takedown 2026"
+- 검증된 IOC: 162개 (도메인 148 + IP 9 + SHA-256 5) / 미검증 IOC: 50개 (도메인 27 + IP 20 + SHA-256 3)
 
 ## 활성 C2 도메인 (148)
 - 0x666[.]info — AMOS 스크립트 캠페인 C2 (Microsoft 2026-05-06)
@@ -200,7 +200,7 @@
 - amos-malware[.]ru ⚠️ (미검증) — Moonlock 분석: AMOS 하드코딩 유출 도메인, /sendlog POST (검색 스니펫 — moonlock.com 페치 차단)
 - applemacios[.]com ⚠️ (미검증) — AMOS 가짜 macOS 도구 사이트, /getrur/install.sh 스크립트 호스팅 (CloudSEK 검색 스니펫 — 페치 차단)
 - bduwih8[.]pro ⚠️ (미검증) — Darktrace 관측 DGA-스타일 AMOS C2 호스트명 (검색 스니펫 — darktrace.com 페치 차단)
-- bestbuydomain[.]com ⚠️ (미검증) — Odyssey/AMOS C2 관련 공격자 통제 인프라, Mallory.ai 검색 스니펫 관측 (검색 스니펫 — mallory.ai 페치 차단)
+- bestbuydomain[.]com ⚠️ (미검증) — Odyssey/AMOS C2 관련 공격자 통제 인프라 (Mallory.ai 검색 스니펫)
 - brewory[.]com ⚠️ (미검증) — AMOS Spectrum-themed ClickFix 캠페인 C2 도메인 (CloudSEK 검색 스니펫 — 페치 차단)
 - bright-links[.]com ⚠️ (미검증) — AMOS ClickFix 캠페인 iframe 호스트 (검색 스니펫)
 - cf-verifi.pages[.]dev ⚠️ (미검증) — AMOS Spectrum-themed ClickFix 캠페인 C2 도메인 (CloudSEK 검색 스니펫 — 페치 차단)
@@ -225,15 +225,17 @@
 - systellis[.]com ⚠️ (미검증) — AMOS 관련 피싱/가짜 사이트 (검색 스니펫 — 페치 차단)
 - trekmesh15[.]com ⚠️ (미검증) — AMOS ClickFix 캠페인 스크립트/페이로드 호스트 (검색 스니펫)
 
-## 미검증 IP (17)
+## 미검증 IP (20)
 - 37.220.87[.]16 ⚠️ (미검증) — AMOS 관련 IP (검색 스니펫)
 - 45.94.47[.]144 ⚠️ (미검증) — AMOS C2 LeaseWeb 서브넷, Darktrace 관측 및 2026-10-02 dev.to 분석 (검색 스니펫 — 페치 차단)
 - 45.94.47[.]145 ⚠️ (미검증) — AMOS 일반 유출 IP, AS60781 LeaseWeb Netherlands (infostealers.com 검색 스니펫)
+- 45.94.47[.]146 ⚠️ (미검증) — AMOS C2 LeaseWeb 서브넷 45.94.47.0/24, 2025년 신원 확인 (infostealers.com 검색 스니펫)
 - 45.94.47[.]147 ⚠️ (미검증) — AMOS 일반 유출 IP, AS60781 LeaseWeb Netherlands (infostealers.com 검색 스니펫)
 - 45.94.47[.]149 ⚠️ (미검증) — AMOS C2 AS60781 LeaseWeb Netherlands, Darktrace 고객 환경 HTTP GET 관측 (검색 스니펫 — 페치 차단)
 - 45.94.47[.]158 ⚠️ (미검증) — AMOS C2 LeaseWeb 서브넷, Darktrace 관측 (검색 스니펫 — 페치 차단)
 - 45.94.47[.]211 ⚠️ (미검증) — AMOS C2 AS57043 Hostkey B.V., /contact POST, Darktrace 관측 (검색 스니펫 — 페치 차단)
 - 45.150.33[.]128 ⚠️ (미검증) — ClickFix AMOS 로더 스테이징 호스트, AS210644 Aeza Group (blog.report-uri.com 검색 스니펫 — 페치 차단)
+- 46.101.104[.]172 ⚠️ (미검증) — Picus Security 분석: AMOS C2 (2024~2025 보고서 출처, 인프라 잠재 스테일) (검색 스니펫 — 페치 차단)
 - 62.60.156[.]226 ⚠️ (미검증) — ClickFix AMOS Bash 스테이저 호스팅 서버 (/stager/init?force=1, /payload/arm64/amos_bin, /payload/x86_64/amos_bin), 2026-07-28+ 캠페인 (ransom-isac.org 검색 스니펫 — 페치 차단)
 - 62.60.216[.]43 ⚠️ (미검증) — ClickFix AMOS 대체 스테이저 서버, 2026-07-28+ 캠페인 (ransom-isac.org 검색 스니펫 — 페치 차단)
 - 85.217.222[.]185 ⚠️ (미검증) — AMOS 역공학 분석에서 식별된 라이브 C2 서버 (Medium 검색 스니펫)
@@ -243,6 +245,7 @@
 - 161.35.146[.]120 ⚠️ (미검증) — AMOS C2, 2026-08-05 및 2026-09-10 감염 시 HTTP POST 수신 (검색 스니펫 — 페치 차단)
 - 178.62.250[.]99 ⚠️ (미검증) — AMOS C2, 포트 80 HTTP 하드코딩, DigitalOcean VPS (검색 스니펫)
 - 188.166.78[.]138 ⚠️ (미검증) — AMOS C2, 2026-07-31 감염 시 트래픽 수신 (검색 스니펫)
+- 193.233.132[.]188 ⚠️ (미검증) — Picus Security 분석: AMOS C2 (2024~2025 보고서 출처, 인프라 잠재 스테일) (검색 스니펫 — 페치 차단)
 
 ## 최근 캠페인 요약
 
@@ -273,14 +276,14 @@ Microsoft가 2026-02-02에 분석. 가짜 AI 도구 설치 프로그램으로 �
 ### getmacouscloud[.]com 캠페인 (2026-07-31 ~ 2026-09-10) [미검증]
 가짜 'macOS toolkit' 페이지에서 Base64/GZIP 압축 Zsh 스크립트를 터미널 복사-붙여넣기로 실행 유도. 브라우저 자격증명, 암호화폐 지갑(Binance, TonKeeper), Telegram 데이터, AWS/Docker/gcloud 설정 파일 탈취. C2: 188.166.78[.]138(2026-07-31), 161.35.146[.]120(2026-08-05, 2026-09-10). 소스 페치 차단으로 미검증.
 
-### LeaseWeb 서브넷 45.94.47.0/24 집중 관측 (지속)
-검색 스니펫 여러 출처에서 LeaseWeb Netherlands (AS60781) 서브넷 내 복수 IP (45.94.47.144~158, 45.94.47.211)가 AMOS C2로 관측. 서브넷 전반 차단 고려 권장.
+### Picus/2024-2025 구형 캠페인 인프라 (스테일 주의) [미검증]
+Picus Security 보고서(2024~2025)에서 식별된 AMOS C2 IP: 193.233.132[.]188, 46.101.104[.]172. 1.5~2년 이상 된 보고서 출처로 현재 인프라가 비활성 또는 재사용 가능성 있음. 차단 전 현재 활성 여부 확인 권장. 이번 실행에 신규 추가(미검증).
 
-### Codex-tips.com 개발자 문서 위장 캠페인 [미검증]
-Brinztech 검색 스니펫에 따르면 codex-tips[.]com이 개발자 문서/프로그래밍 팁 사이트로 위장, 환경 분석 회피 기능을 포함한 AMOS 페이로드 배포. 정확한 날짜 불명. 소스 페치 차단으로 미검증.
+### LeaseWeb 서브넷 45.94.47.0/24 집중 관측 (지속)
+검색 스니펫 여러 출처에서 LeaseWeb Netherlands (AS60781) 서브넷 내 복수 IP (45.94.47.144~158, 45.94.47.211)가 AMOS C2로 관측. 이번 실행에서 45.94.47[.]146 신규 추가. 서브넷 전반 차단 고려 권장.
 
 ## 이번 실행 변경사항
-- 신규: 없음 (검색 및 페치 결과에서 발견된 모든 IOC가 기존 목록에 이미 포함됨)
+- 신규: 45.94.47[.]146 ⚠️ (미검증) — LeaseWeb 서브넷, infostealers.com 검색 스니펫; 46.101.104[.]172 ⚠️ (미검증) — Picus Security 검색 스니펫; 193.233.132[.]188 ⚠️ (미검증) — Picus Security 검색 스니펫
 - 제거: 없음
 - 승격(미검증→검증): 없음
 
@@ -452,7 +455,7 @@ yablochnisok.com
 ```
 
 ## 출처
-- [From open lures to cloaked gates: How a macOS ClickFix campaign learned to hide](https://www.microsoft.com/en-us/security/blog/2026/08/05/macos-clickfix-campaign-learned-hide/) — 2026-08-05 — fetched
+- [From open lures to cloaked gates: How a macOS ClickFix campaign learned to hide](https://www.microsoft.com/en-us/security/blog/2026/08/05/macos-clickfix-campaign-learned-hide/) — 2026-08-05 — fetched (2026-10-25 실행 시)
 - [2026-10-02: Atomic macOS (AMOS) Stealer infection from malicious ad impersonating Claude Code](https://dev.to/mark0_617b45cda9782a/2026-10-02-atomic-macos-amos-stealer-infection-from-malicious-ad-impersonating-claude-code-1668) — 2026-10-02 — blocked (dev.to)
 - [MacOS ClickFix AMOS Campaign](https://ransom-isac.org/blog/macos-clickfix-amos-campaign/) — 2026-07-28+ — blocked (ransom-isac.org)
 - [Atomic macOS (AMOS) Stealer Activity](https://unit42.paloaltonetworks.com/atomic-macos-amos-stealer-activity/) — 2026-08 — blocked (unit42.paloaltonetworks.com)
@@ -461,3 +464,4 @@ yablochnisok.com
 - [Hackers Used EvilTokens, ClickFix Campaign to Attack Claude Code Users with AMOS Stealer](https://cybersecuritynews.com/eviltokens-amos-march-2026-threat-campaigns/) — 2026-03 — blocked (cybersecuritynews.com)
 - [Chasing a ClickFix Campaign From One Domain to a macOS Stealer](https://blog.report-uri.com/chasing-a-clickfix-campaign-from-one-domain-to-a-macos-stealer/) — 2026 — blocked (blog.report-uri.com)
 - [Atomic macOS stealer is mimicking an AI agent tool for Mac](https://moonlock.com/amos-mimicking-ai-agent-tool) — 2026-03 — blocked (moonlock.com)
+- [Atomic Stealer: Dissecting 2024's Most Notorious macOS Infostealer](https://www.picussecurity.com/resource/blog/atomic-stealer-amos-macos-threat-analysis) — 2024-2025 — blocked (www.picussecurity.com)

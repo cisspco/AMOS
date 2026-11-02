@@ -1,47 +1,42 @@
-# AMOS / Atomic macOS Stealer — Defensive IOC Repository
+# AMOS / Atomic macOS Stealer — IOC Tracker
 
-**Last updated:** 2026-10-25 UTC  
-**Maintained by:** Automated daily snapshot (defensive blocking purposes)
+**Last updated:** 2026-11-02 UTC  
+**Verified domains:** 148 | **Verified IPs:** 9 | **Verified SHA-256:** 5  
+**Unverified domains:** 27 | **Unverified IPs:** 20 | **Unverified SHA-256:** 3  
 
-## Counts
+Defensive blocking resource for AMOS (Atomic macOS Stealer) and direct variants (Odyssey).
+Daily snapshots are committed automatically. All IOCs sourced from public threat-intelligence reports.
 
-| Category | Verified | Unverified |
-|---|---|---|
-| Domains | 148 | 27 |
-| IPs | 9 | 17 |
-| SHA-256 hashes | 5 | 3 |
-| **Total** | **162** | **47** |
+## Blocklist files (safe for firewall/DNS sinkhole — VERIFIED only)
 
-## Blocklist Files
+> **Only `blocklists/domains.txt` and `blocklists/ips.txt` are safe to feed directly into a firewall or DNS sinkhole.**
+> The `unverified-*` files contain indicators sourced only from search-result snippets or blocked fetches and require analyst review before operational use.
 
-> ⚠️ **Only `blocklists/domains.txt` and `blocklists/ips.txt` are safe to feed directly into a firewall or DNS sinkhole.** These contain only verified IOCs from successfully fetched vendor reports. The `unverified-*` files are for analyst review only.
+| File | Contents | Firewall-safe? |
+|------|----------|---------------|
+| `blocklists/domains.txt` | 148 verified AMOS C2/delivery domains | YES |
+| `blocklists/ips.txt` | 9 verified AMOS C2 IPs | YES |
+| `blocklists/unverified-domains.txt` | 27 unverified domains (snippet-only) | NO — analyst review required |
+| `blocklists/unverified-ips.txt` | 20 unverified IPs (snippet-only) | NO — analyst review required |
 
-| File | Description | Raw URL |
-|---|---|---|
-| `blocklists/domains.txt` | Verified domains — firewall/DNS safe | [domains.txt](blocklists/domains.txt) |
-| `blocklists/ips.txt` | Verified IPs — firewall safe | [ips.txt](blocklists/ips.txt) |
-| `blocklists/unverified-domains.txt` | Unverified domains (search snippets only) — analyst review | [unverified-domains.txt](blocklists/unverified-domains.txt) |
-| `blocklists/unverified-ips.txt` | Unverified IPs (search snippets only) — analyst review | [unverified-ips.txt](blocklists/unverified-ips.txt) |
+## Raw blocklist URLs (GitHub)
 
-## Daily Snapshots
+```
+https://raw.githubusercontent.com/cisspco/AMOS/main/blocklists/domains.txt
+https://raw.githubusercontent.com/cisspco/AMOS/main/blocklists/ips.txt
+https://raw.githubusercontent.com/cisspco/AMOS/main/blocklists/unverified-domains.txt
+https://raw.githubusercontent.com/cisspco/AMOS/main/blocklists/unverified-ips.txt
+```
 
-Full IOC reports with context, campaign summaries, and change logs are in [`snapshots/`](snapshots/).  
-The most recent snapshot is always at [`latest.md`](latest.md).
+## Latest full snapshot
 
-## IOC Classification
+See [latest.md](latest.md) for today's full IOC report with defanged indicators, campaign summaries, and source attribution.
 
-- **Verified**: Indicator appeared in the body of a successfully fetched vendor report
-- **Unverified** ⚠️: Indicator came only from a web search result snippet, or from a report whose fetch was blocked (EGRESS_BLOCKED)
+## Evidence levels
 
-## Primary Sources
+- **verified** — indicator appeared in the body of a successfully fetched vendor report
+- **unverified** ⚠️ — indicator came only from a search-result snippet, or from a report whose fetch was blocked
 
-- Microsoft Security Blog — macOS ClickFix campaign research (2026-05-06, 2026-08-05)
-- Unit 42 / Palo Alto Networks — AMOS stealer activity (2026, fetch blocked)
-- IRU — AMOS ClickFix/Odyssey analysis (2026, fetch blocked)
-- Moonlock — AMOS AI agent tool impersonation (2026, fetch blocked)
-- Ransom-ISAC, CloudSEK, Darktrace, infostealers.com — additional campaign intelligence (search snippets, unverified)
+## Network note
 
-## Format Notes
-
-All IOCs in snapshot reports are **defanged** (`example[.]com`, `1.2.3[.]4`).  
-Blocklist `.txt` files are **un-defanged**, one entry per line, sorted, deduplicated.
+This tracker runs in a cloud sandbox with restricted egress. Vendor domains (Unit 42, Ransom-ISAC, Moonlock, Trend Micro, Broadcom, etc.) are currently outside the session's allowed network domains (EGRESS_BLOCKED). To promote unverified IOCs to verified status, allow those domains in the session's network policy.
