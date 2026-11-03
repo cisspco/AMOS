@@ -1,6 +1,6 @@
 # AMOS / Atomic macOS Stealer — IOC Tracker
 
-**Last updated:** 2026-11-02 UTC  
+**Last updated:** 2026-11-03 UTC  
 **Verified domains:** 148 | **Verified IPs:** 9 | **Verified SHA-256:** 5  
 **Unverified domains:** 27 | **Unverified IPs:** 20 | **Unverified SHA-256:** 3  
 
