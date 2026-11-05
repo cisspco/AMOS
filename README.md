@@ -1,6 +1,8 @@
 # AMOS IOC Repository
 
-**Last updated:** 2026-11-04 UTC
+Automated daily snapshots of Atomic macOS Stealer (AMOS) indicators of compromise for defensive blocking.
+
+**Last updated:** 2026-11-05 UTC
 
 ## Counts
 | List | Count |
@@ -8,48 +10,44 @@
 | Verified domains | 148 |
 | Verified IPs | 9 |
 | Verified SHA-256 hashes | 5 |
-| Unverified domains | 29 |
-| Unverified IPs | 21 |
-| Unverified SHA-256 hashes | 3 |
-| Unverified MD5 hashes | 2 |
+| Unverified domains | 32 |
+| Unverified IPs | 22 |
+| Unverified hashes (SHA-256) | 3 |
+| Unverified hashes (MD5) | 2 |
 
-## ⚠️ Blocklist Safety Note
+## Blocklist URLs (raw, for firewall/DNS import)
 
-**Only `blocklists/domains.txt` and `blocklists/ips.txt` are safe to feed directly into a firewall or DNS sinkhole** — they contain only verified indicators confirmed by successfully fetched vendor reports.
+> **Important:** Only `blocklists/domains.txt` and `blocklists/ips.txt` are safe to feed directly into a firewall or DNS sinkhole. These files contain only verified indicators confirmed from successfully fetched vendor reports. The `unverified-*.txt` files contain indicators sourced only from search snippets or blocked fetches — treat them as leads requiring additional validation before blocking.
 
-The `unverified-domains.txt` and `unverified-ips.txt` files contain indicators sourced only from search-result snippets or reports that were blocked by egress policy; treat them as leads requiring independent verification before operational use.
+- Verified domains: `blocklists/domains.txt`
+- Verified IPs: `blocklists/ips.txt`
+- Unverified domains (leads only): `blocklists/unverified-domains.txt`
+- Unverified IPs (leads only): `blocklists/unverified-ips.txt`
 
-## Blocklist URLs (raw, for firewall import)
+## Snapshots
 
-| File | Purpose |
-|------|---------|
-| [`blocklists/domains.txt`](blocklists/domains.txt) | Verified AMOS C2 domains — firewall/DNS safe |
-| [`blocklists/ips.txt`](blocklists/ips.txt) | Verified AMOS C2 IPs — firewall safe |
-| [`blocklists/unverified-domains.txt`](blocklists/unverified-domains.txt) | Unverified domains — research use only |
-| [`blocklists/unverified-ips.txt`](blocklists/unverified-ips.txt) | Unverified IPs — research use only |
+Daily full reports are in `snapshots/YYYY-MM-DD.md`. The latest is always at `latest.md`.
 
-## Daily Snapshots
+## Evidence levels
 
-Full dated snapshots with Korean-language analysis, campaign summaries, and change tracking are in [`snapshots/`](snapshots/). The latest snapshot is always mirrored to [`latest.md`](latest.md).
+- **verified** — indicator appeared in the body of a report fetched successfully
+- **unverified** ⚠️ — indicator sourced only from a search-result snippet or a report whose fetch was blocked
 
-## Methodology
+## Sources (primary)
 
-- IOCs are classified **verified** only when they appear in the body of a successfully fetched vendor report.
-- IOCs sourced only from search-result snippets or egress-blocked reports are classified **unverified** and kept in separate files.
-- All four blocklist files are cumulative; entries are never dropped unless a fetched source explicitly reports sinkhole or takedown.
-- Indicators are defanged in the report (`example[.]com`, `1.2.3[.]4`); blocklist files contain raw un-defanged values.
+- [ClickFix campaign uses fake macOS utilities lures to deliver infostealers](https://www.microsoft.com/en-us/security/blog/2026/05/06/clickfix-campaign-uses-fake-macos-utilities-lures-deliver-infostealers/) — Microsoft, 2026-05-06
+- [From open lures to cloaked gates: How a macOS ClickFix campaign learned to hide](https://www.microsoft.com/en-us/security/blog/2026/08/05/macos-clickfix-campaign-learned-hide/) — Microsoft, 2026-08-05
 
-## Egress Notes
+## Egress-blocked vendor domains (allowlist in session network settings to improve coverage)
 
-The following vendor domains have been consistently blocked by the session's network egress policy and have never been successfully fetched. If access is granted, IOCs from these sources may be promoted from unverified to verified on the next run:
+The following vendor domains are currently blocked by the session's egress policy. Adding them would improve IOC coverage:
 
 - unit42.paloaltonetworks.com
 - ransom-isac.org
+- blog.report-uri.com
+- www.catonetworks.com
 - www.cloudsek.com
 - www.trendmicro.com
-- www.darktrace.com
 - www.sophos.com
 - moonlock.com
-- blog.report-uri.com
-- aviatrix.ai
-- www.iru.com
+- www.darktrace.com
