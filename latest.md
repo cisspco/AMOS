@@ -1,8 +1,8 @@
-# AMOS IOC Snapshot — 2026-11-06 UTC
+# AMOS IOC Snapshot — 2026-11-07 UTC
 
 ## 수집 상태
-- 페치 성공: https://www.microsoft.com/en-us/security/blog/2026/05/06/clickfix-campaign-uses-fake-macos-utilities-lures-deliver-infostealers/
-- 페치 차단(EGRESS_BLOCKED): www.cyera.com, unit42.paloaltonetworks.com, www.catonetworks.com, moonlock.com
+- 페치 성공: 없음
+- 페치 차단(EGRESS_BLOCKED): unit42.paloaltonetworks.com, www.trendmicro.com, ransom-isac.org, blog.report-uri.com, www.infostealers.com
 - 검증된 IOC: 162개 (도메인 148 + IP 9 + SHA-256 5) / 미검증 IOC: 60개 (도메인 32 + IP 23 + SHA-256 3 + MD5 2)
 
 ## 활성 C2 도메인 (148)
@@ -291,7 +291,7 @@ Microsoft가 2026-02-02에 분석. 가짜 AI 도구 설치 프로그램으로 �
 검색 스니펫 여러 출처에서 LeaseWeb Netherlands (AS60781) 서브넷 내 복수 IP (45.94.47.144~158, 45.94.47.211)가 AMOS C2로 관측. 서브넷 전반 차단 고려 권장.
 
 ## 이번 실행 변경사항
-- 신규: 91.92.242[.]30 🔥 (미검증 IP, Cyera 2026-11-03 — AMOS AI 에이전트 스킬 캠페인 C2, 페치 차단) — 총 1개
+- 신규: 없음
 - 제거: 없음
 - 승격(미검증→검증): 없음
 
@@ -468,3 +468,8 @@ yablochnisok.com
 - [Atomic macOS (AMOS) Stealer Activity — Unit 42](https://unit42.paloaltonetworks.com/atomic-macos-amos-stealer-activity/) — 2026-08+ — blocked
 - [Cato CTRL: When Trust Becomes the Payload in a Fake Codex ClickFix Campaign](https://www.catonetworks.com/blog/cato-ctrl-when-trust-becomes-payload-in-fake-codex-clickfix-campaign/) — 2026 — blocked
 - [Atomic macOS stealer is mimicking an AI agent tool for Mac](https://moonlock.com/amos-mimicking-ai-agent-tool) — 2026 — blocked
+- [MacOS ClickFix AMOS Campaign](https://ransom-isac.org/blog/macos-clickfix-amos-campaign/) — 2026-09 — blocked
+- [Chasing a ClickFix Campaign From One Domain to a macOS Stealer](https://blog.report-uri.com/chasing-a-clickfix-campaign-from-one-domain-to-a-macos-stealer/) — 2026-09 — blocked
+- [Atomic macOS (AMOS) Stealer Activity](https://unit42.paloaltonetworks.com/atomic-macos-amos-stealer-activity/) — 2026-09-16 — blocked
+- [Malicious OpenClaw Skills Used to Distribute Atomic macOS Stealer](https://www.trendmicro.com/en_us/research/26/b/openclaw-skills-used-to-distribute-atomic-macos-stealer.html) — 2026-02 — blocked
+- [Atomic macOS Stealer now includes a backdoor for persistent access](https://www.infostealers.com/article/atomic-macos-stealer-now-includes-a-backdoor-for-persistent-access/) — 2025-2026 — blocked
