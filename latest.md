@@ -1,8 +1,8 @@
-# AMOS IOC Snapshot — 2026-11-07 UTC
+# AMOS IOC Snapshot — 2026-11-08 UTC
 
 ## 수집 상태
 - 페치 성공: 없음
-- 페치 차단(EGRESS_BLOCKED): unit42.paloaltonetworks.com, www.trendmicro.com, ransom-isac.org, blog.report-uri.com, www.infostealers.com
+- 페치 차단(EGRESS_BLOCKED): unit42.paloaltonetworks.com, blog.report-uri.com, ransom-isac.org, moonlock.com, www.trendmicro.com
 - 검증된 IOC: 162개 (도메인 148 + IP 9 + SHA-256 5) / 미검증 IOC: 60개 (도메인 32 + IP 23 + SHA-256 3 + MD5 2)
 
 ## 활성 C2 도메인 (148)
@@ -245,7 +245,7 @@
 - 62.60.156[.]226 ⚠️ (미검증) — ClickFix AMOS Bash 스테이저 호스팅 서버 (/stager/init?force=1, /payload/arm64/amos_bin, /payload/x86_64/amos_bin), 2026-07-28+ 캠페인 (ransom-isac.org 검색 스니펫 — 페치 차단)
 - 62.60.216[.]43 ⚠️ (미검증) — ClickFix AMOS 대체 스테이저 서버, 2026-07-28+ 캠페인 (ransom-isac.org 검색 스니펫 — 페치 차단)
 - 85.217.222[.]185 ⚠️ (미검증) — AMOS 역공학 분석에서 식별된 라이브 C2 서버 (Medium 검색 스니펫)
-- 91.92.242[.]30 🔥 ⚠️ (미검증) — Cyera 2026-11-03: AMOS AI 에이전트 스킬 캠페인 주요 C2, 2026-09 70개 악성 스킬 감염 연계 (cyera.com 검색 스니펫 — 페치 차단) [2026-11-06 신규]
+- 91.92.242[.]30 🔥 ⚠️ (미검증) — Cyera 2026-11-03: AMOS AI 에이전트 스킬 캠페인 주요 C2, 2026-09 70개 악성 스킬 감염 연계 (cyera.com 검색 스니펫 — 페치 차단)
 - 94.142.138[.]177 ⚠️ (미검증) — Moonlock 분석: AMOS 하드코딩 C2, amos-malware[.]ru/sendlog POST (검색 스니펫 — moonlock.com 페치 차단)
 - 95.163.153[.]80 ⚠️ (미검증) — ClickFix AMOS 로더 텔레메트리 엔드포인트 :8133/api/t (blog.report-uri.com 검색 스니펫 — 페치 차단)
 - 95.164.53[.]3 ⚠️ (미검증) — Odyssey/AMOS 변종 하드코딩 C2 (/contact 엔드포인트), Darktrace 관측 (검색 스니펫 — 페치 차단)
@@ -257,7 +257,7 @@
 
 ## 최근 캠페인 요약
 
-### AMOS AI 에이전트 스킬 캠페인 (2026-09~) [미검증 — 신규]
+### AMOS AI 에이전트 스킬 캠페인 (2026-09~) [미검증]
 Cyera가 2026-11-03에 발표한 연구에 따르면 AMOS가 AI 에이전트 마켓플레이스(OpenClaw/ClawHub 등)의 악성 "스킬" 패키지를 통해 배포되고 있음. 2026년 9월 기준 70개 이상의 악성 스킬 확인, 주요 C2 IP는 91.92.242[.]30. Trend Micro 및 Koi Security도 800개 이상의 악성 스킬 관측. 개발자 자격증명 탈취 목적. (출처: cyera.com 검색 스니펫 — 페치 차단)
 
 ### ClickFix/macOS ClickFix 은폐 캠페인 (2025-07 ~ 2026-08)
