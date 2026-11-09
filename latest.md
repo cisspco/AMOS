@@ -1,8 +1,8 @@
-# AMOS IOC Snapshot — 2026-11-08 UTC
+# AMOS IOC Snapshot — 2026-11-09 UTC
 
 ## 수집 상태
 - 페치 성공: 없음
-- 페치 차단(EGRESS_BLOCKED): unit42.paloaltonetworks.com, blog.report-uri.com, ransom-isac.org, moonlock.com, www.trendmicro.com
+- 페치 차단(EGRESS_BLOCKED): unit42.paloaltonetworks.com, blog.report-uri.com, ransom-isac.org, www.trendmicro.com, www.broadcom.com
 - 검증된 IOC: 162개 (도메인 148 + IP 9 + SHA-256 5) / 미검증 IOC: 60개 (도메인 32 + IP 23 + SHA-256 3 + MD5 2)
 
 ## 활성 C2 도메인 (148)
@@ -466,10 +466,10 @@ yablochnisok.com
 - [ClickFix campaign uses fake macOS utilities lures to deliver infostealers](https://www.microsoft.com/en-us/security/blog/2026/05/06/clickfix-campaign-uses-fake-macos-utilities-lures-deliver-infostealers/) — 2026-05-06 — fetched
 - [AMOS Malware in AI Agent Skills: Analysis and IoCs](https://www.cyera.com/research/poisoned-skills-target-developer-credentials) — 2026-11-03 — blocked
 - [Atomic macOS (AMOS) Stealer Activity — Unit 42](https://unit42.paloaltonetworks.com/atomic-macos-amos-stealer-activity/) — 2026-08+ — blocked
+- [Malicious OpenClaw Skills Used to Distribute Atomic macOS Stealer](https://www.trendmicro.com/en_us/research/26/b/openclaw-skills-used-to-distribute-atomic-macos-stealer.html) — 2026-02 — blocked
+- [AMOS Atomic macOS Stealer deployed in ClickFix campaign](https://www.broadcom.com/support/security-center/protection-bulletin/amos-atomic-macos-stealer-malware-deployed-in-latest-clickfix-campaign-targeting-macos-users) — 2026-06-24 — blocked
 - [Cato CTRL: When Trust Becomes the Payload in a Fake Codex ClickFix Campaign](https://www.catonetworks.com/blog/cato-ctrl-when-trust-becomes-payload-in-fake-codex-clickfix-campaign/) — 2026 — blocked
 - [Atomic macOS stealer is mimicking an AI agent tool for Mac](https://moonlock.com/amos-mimicking-ai-agent-tool) — 2026 — blocked
 - [MacOS ClickFix AMOS Campaign](https://ransom-isac.org/blog/macos-clickfix-amos-campaign/) — 2026-09 — blocked
 - [Chasing a ClickFix Campaign From One Domain to a macOS Stealer](https://blog.report-uri.com/chasing-a-clickfix-campaign-from-one-domain-to-a-macos-stealer/) — 2026-09 — blocked
-- [Atomic macOS (AMOS) Stealer Activity](https://unit42.paloaltonetworks.com/atomic-macos-amos-stealer-activity/) — 2026-09-16 — blocked
-- [Malicious OpenClaw Skills Used to Distribute Atomic macOS Stealer](https://www.trendmicro.com/en_us/research/26/b/openclaw-skills-used-to-distribute-atomic-macos-stealer.html) — 2026-02 — blocked
 - [Atomic macOS Stealer now includes a backdoor for persistent access](https://www.infostealers.com/article/atomic-macos-stealer-now-includes-a-backdoor-for-persistent-access/) — 2025-2026 — blocked

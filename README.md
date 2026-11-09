@@ -1,39 +1,30 @@
-# AMOS IOC Tracker
+# AMOS / Atomic macOS Stealer IOC Repository
 
-**Last updated:** 2026-11-08 UTC
+**Last updated:** 2026-11-09 UTC  
+**Verified domains:** 148 | **Verified IPs:** 9 | **Verified SHA-256:** 5  
+**Unverified domains:** 32 | **Unverified IPs:** 23 | **Unverified hashes:** 5 (3 SHA-256 + 2 MD5)
 
-Defensive blocking resource for Atomic macOS Stealer (AMOS) infrastructure. Updated daily via automated snapshot runs.
+Defensive IOC tracking for AMOS (Atomic macOS Stealer) and direct variants (Odyssey).  
+Updated daily by automated scheduled run. All IOCs are defanged in reports; blocklist files are un-defanged.
 
-## Counts (cumulative)
-| List | Count |
-|------|-------|
-| Verified domains | 148 |
-| Verified IPs | 9 |
-| Verified SHA-256 hashes | 5 |
-| Unverified domains | 32 |
-| Unverified IPs | 23 |
-| Unverified hashes (SHA-256) | 3 |
-| Unverified hashes (MD5) | 2 |
+## Blocklist files (raw, un-defanged, one entry per line)
 
-## Blocklist files
+| File | Contents | Safe for firewall/DNS? |
+|------|----------|------------------------|
+| [`blocklists/domains.txt`](blocklists/domains.txt) | Verified domains only | **YES** |
+| [`blocklists/ips.txt`](blocklists/ips.txt) | Verified IPs only | **YES** |
+| [`blocklists/unverified-domains.txt`](blocklists/unverified-domains.txt) | Unverified domains (search snippets only) | Review before use |
+| [`blocklists/unverified-ips.txt`](blocklists/unverified-ips.txt) | Unverified IPs (search snippets only) | Review before use |
 
-> **Only `blocklists/domains.txt` and `blocklists/ips.txt` are safe to feed directly into a firewall or DNS sinkhole** — they contain only verified IOCs (sourced from successfully fetched vendor reports). The `unverified-*.txt` files require additional validation before operational use.
-
-| File | Description |
-|------|-------------|
-| [`blocklists/domains.txt`](blocklists/domains.txt) | Verified C2/delivery domains — firewall-ready |
-| [`blocklists/ips.txt`](blocklists/ips.txt) | Verified C2 IPs — firewall-ready |
-| [`blocklists/unverified-domains.txt`](blocklists/unverified-domains.txt) | Unverified domains (search snippets only) |
-| [`blocklists/unverified-ips.txt`](blocklists/unverified-ips.txt) | Unverified IPs (search snippets only) |
+> **`blocklists/domains.txt` and `blocklists/ips.txt` are the only files safe to feed directly into a firewall or DNS sinkhole without additional review.**  
+> Unverified files contain indicators sourced only from search result snippets; they have not been confirmed in a fully-fetched vendor report.
 
 ## Latest snapshot
-See [`latest.md`](latest.md) for the full current snapshot with defanged IOCs, campaign summaries, and source attribution.
 
-## Snapshots archive
-Daily snapshots are stored in [`snapshots/`](snapshots/).
+See [`latest.md`](latest.md) for the full current IOC report with context, campaign summaries, and change log.
 
-## Notes
-- IOCs marked ⚠️ are unverified (search snippet only) and must not be used directly in production blocklists without further validation.
-- IOCs marked 🔥 appeared in a report dated within the last 7 days.
-- All egress fetches are blocked in the automated environment; all IOCs since 2026-11-01 are therefore unverified pending a network policy change.
-- AMOS infrastructure rotates rapidly; treat older entries (pre-2026) with lower confidence.
+Historical daily snapshots are in [`snapshots/`](snapshots/).
+
+## Network note
+
+This repository's automated runner operates in a sandboxed cloud environment. Vendor domains (Unit 42, Trend Micro, Broadcom, Ransom-ISAC, Report-URI, etc.) are currently outside the allowed egress list, so all fetches are EGRESS_BLOCKED. All IOCs beyond the initial Microsoft-sourced verified set remain unverified until egress is expanded. To allow a vendor domain, add it to the session's network policy.
