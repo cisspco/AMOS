@@ -1,8 +1,8 @@
 # AMOS / Atomic macOS Stealer IOC Repository
 
-**Last updated:** 2026-11-09 UTC  
+**Last updated:** 2026-11-10 UTC  
 **Verified domains:** 148 | **Verified IPs:** 9 | **Verified SHA-256:** 5  
-**Unverified domains:** 32 | **Unverified IPs:** 23 | **Unverified hashes:** 5 (3 SHA-256 + 2 MD5)
+**Unverified domains:** 32 | **Unverified IPs:** 24 | **Unverified hashes:** 5 (3 SHA-256 + 2 MD5)
 
 Defensive IOC tracking for AMOS (Atomic macOS Stealer) and direct variants (Odyssey).  
 Updated daily by automated scheduled run. All IOCs are defanged in reports; blocklist files are un-defanged.
