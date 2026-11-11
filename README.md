@@ -1,30 +1,47 @@
-# AMOS / Atomic macOS Stealer IOC Repository
+# AMOS IOC Repository
 
-**Last updated:** 2026-11-10 UTC  
-**Verified domains:** 148 | **Verified IPs:** 9 | **Verified SHA-256:** 5  
+Defensive blocking intelligence for **AMOS (Atomic macOS Stealer)** and direct variants (Odyssey). Updated daily by automated snapshot runs.
+
+**Last updated:** 2026-11-11 UTC
+**Verified domains:** 148 | **Verified IPs:** 9 | **Verified SHA-256:** 5
 **Unverified domains:** 32 | **Unverified IPs:** 24 | **Unverified hashes:** 5 (3 SHA-256 + 2 MD5)
 
-Defensive IOC tracking for AMOS (Atomic macOS Stealer) and direct variants (Odyssey).  
-Updated daily by automated scheduled run. All IOCs are defanged in reports; blocklist files are un-defanged.
+---
 
-## Blocklist files (raw, un-defanged, one entry per line)
+## Blocklist files
 
-| File | Contents | Safe for firewall/DNS? |
-|------|----------|------------------------|
-| [`blocklists/domains.txt`](blocklists/domains.txt) | Verified domains only | **YES** |
-| [`blocklists/ips.txt`](blocklists/ips.txt) | Verified IPs only | **YES** |
-| [`blocklists/unverified-domains.txt`](blocklists/unverified-domains.txt) | Unverified domains (search snippets only) | Review before use |
-| [`blocklists/unverified-ips.txt`](blocklists/unverified-ips.txt) | Unverified IPs (search snippets only) | Review before use |
+> **Only `blocklists/domains.txt` and `blocklists/ips.txt` are safe to feed directly into a firewall or DNS sinkhole.** These contain only IOCs verified from successfully fetched vendor reports. The `unverified-*` files are for research review only.
 
-> **`blocklists/domains.txt` and `blocklists/ips.txt` are the only files safe to feed directly into a firewall or DNS sinkhole without additional review.**  
-> Unverified files contain indicators sourced only from search result snippets; they have not been confirmed in a fully-fetched vendor report.
+| File | Contents | Safe to block? |
+|------|----------|---------------|
+| `blocklists/domains.txt` | Verified C2/delivery domains, sorted | ✅ Yes |
+| `blocklists/ips.txt` | Verified C2 IPs, sorted | ✅ Yes |
+| `blocklists/unverified-domains.txt` | Unverified domains (search snippets only) | ⚠️ Review first |
+| `blocklists/unverified-ips.txt` | Unverified IPs (search snippets only) | ⚠️ Review first |
 
-## Latest snapshot
+### Raw blocklist URLs (latest commit)
+- Domains: `https://raw.githubusercontent.com/cisspco/AMOS/main/blocklists/domains.txt`
+- IPs: `https://raw.githubusercontent.com/cisspco/AMOS/main/blocklists/ips.txt`
+- Unverified domains: `https://raw.githubusercontent.com/cisspco/AMOS/main/blocklists/unverified-domains.txt`
+- Unverified IPs: `https://raw.githubusercontent.com/cisspco/AMOS/main/blocklists/unverified-ips.txt`
 
-See [`latest.md`](latest.md) for the full current IOC report with context, campaign summaries, and change log.
+---
 
-Historical daily snapshots are in [`snapshots/`](snapshots/).
+## Snapshots
 
-## Network note
+Daily full reports are in `snapshots/<YYYY-MM-DD>.md`. The latest is always at `latest.md`.
 
-This repository's automated runner operates in a sandboxed cloud environment. Vendor domains (Unit 42, Trend Micro, Broadcom, Ransom-ISAC, Report-URI, etc.) are currently outside the allowed egress list, so all fetches are EGRESS_BLOCKED. All IOCs beyond the initial Microsoft-sourced verified set remain unverified until egress is expanded. To allow a vendor domain, add it to the session's network policy.
+---
+
+## Evidence levels
+
+- **verified** — IOC appeared in the body of a report fetched successfully in that run's Step 2
+- **unverified ⚠️** — IOC came only from a search-result snippet, or from a report whose fetch was blocked
+
+IOCs are promoted from unverified → verified when confirmed by a successfully fetched report in a later run, and noted under `승격(미검증→검증)` in that day's snapshot.
+
+---
+
+## Sources tracked
+
+Microsoft Security Blog, Unit 42 (Palo Alto), Trend Micro, Moonlock, Cyera, Mate Security, Broadcom/Symantec, Cato CTRL, ransom-isac.org, blog.report-uri.com, Darktrace, CloudSEK, infostealers.com, SANS ISC, and others. See individual snapshots for full source lists.
