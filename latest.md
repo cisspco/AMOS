@@ -1,9 +1,9 @@
-# AMOS IOC Snapshot — 2026-11-11 UTC
+# AMOS IOC Snapshot — 2026-11-12 UTC
 
 ## 수집 상태
-- 페치 성공: https://www.microsoft.com/en-us/security/blog/2026/08/05/macos-clickfix-campaign-learned-hide/
-- 페치 차단(EGRESS_BLOCKED): dev.to, techcommunity.microsoft.com, unit42.paloaltonetworks.com, www.cyera.com
-- 검증된 IOC: 162개 (도메인 148 + IP 9 + SHA-256 5) / 미검증 IOC: 61개 (도메인 32 + IP 24 + SHA-256 3 + MD5 2)
+- 페치 성공: https://www.microsoft.com/en-us/security/blog/2026/02/02/infostealers-without-borders-macos-python-stealers-and-platform-abuse/ (신규 IOC 없음)
+- 페치 차단(EGRESS_BLOCKED): cyera.com, unit42.paloaltonetworks.com, aviatrix.ai, pcapai.com, ransom-isac.org, darktrace.com, cybersecuritynews.com, malwarebytes.com
+- 검증된 IOC: 162개 (도메인 148 + IP 9 + SHA-256 5) / 미검증 IOC: 63개 (도메인 32 + IP 26 + SHA-256 3 + MD5 2)
 
 ## 활성 C2 도메인 (148)
 - 0x666[.]info — AMOS 스크립트 캠페인 C2 (Microsoft 2026-05-06)
@@ -230,7 +230,8 @@
 - systellis[.]com ⚠️ (미검증) — AMOS 관련 피싱/가짜 사이트 (검색 스니펫 — 페치 차단)
 - trekmesh15[.]com ⚠️ (미검증) — AMOS ClickFix 캠페인 스크립트/페이로드 호스트 (검색 스니펫)
 
-## 미검증 IP (24)
+## 미검증 IP (26)
+- 5.42.65[.]10 ⚠️ (미검증) — Cyera 2026-11-03: AMOS AI 에이전트 스킬 캠페인 보조 C2 (cyera.com 검색 스니펫 — 페치 차단)
 - 37.220.87[.]16 ⚠️ (미검증) — AMOS 관련 IP (검색 스니펫)
 - 45.94.47[.]144 ⚠️ (미검증) — AMOS C2 LeaseWeb 서브넷, Darktrace 관측 및 2026-10-02 dev.to 분석 (검색 스니펫 — 페치 차단)
 - 45.94.47[.]145 ⚠️ (미검증) — AMOS 일반 유출 IP, AS60781 LeaseWeb Netherlands (infostealers.com 검색 스니펫)
@@ -240,6 +241,7 @@
 - 45.94.47[.]158 ⚠️ (미검증) — AMOS C2 LeaseWeb 서브넷, Darktrace 관측 (검색 스니펫 — 페치 차단)
 - 45.94.47[.]211 ⚠️ (미검증) — AMOS C2 AS57043 Hostkey B.V., /contact POST, Darktrace 관측 (검색 스니펫 — 페치 차단)
 - 45.131.215[.]56 ⚠️ (미검증) — ClickFix AMOS 로더 대체 스테이징 호스트, AS203273 (blog.report-uri.com 검색 스니펫 — 페치 차단)
+- 45.137.65[.]112 ⚠️ (미검증) — Cyera 2026-11-03: AMOS AI 에이전트 스킬 캠페인 C2 (cyera.com 검색 스니펫 — 페치 차단)
 - 45.150.33[.]128 ⚠️ (미검증) — ClickFix AMOS 로더 스테이징 호스트, AS210644 Aeza Group (blog.report-uri.com 검색 스니펫 — 페치 차단)
 - 46.101.104[.]172 ⚠️ (미검증) — Picus Security 분석: AMOS C2 (2024~2025 보고서 출처, 인프라 잠재 스테일) (검색 스니펫 — 페치 차단)
 - 62.60.156[.]226 ⚠️ (미검증) — ClickFix AMOS Bash 스테이저 호스팅 서버 (/stager/init?force=1, /payload/arm64/amos_bin, /payload/x86_64/amos_bin), 2026-07-28+ 캠페인 (ransom-isac.org 검색 스니펫 — 페치 차단)
@@ -259,7 +261,7 @@
 ## 최근 캠페인 요약
 
 ### AMOS AI 에이전트 스킬 캠페인 (2026-09~) [미검증]
-Cyera가 2026-11-03에 발표한 연구에 따르면 AMOS가 AI 에이전트 마켓플레이스(OpenClaw/ClawHub 등)의 악성 "스킬" 패키지를 통해 배포되고 있음. 2026년 9월 기준 70개 이상의 악성 스킬 확인, 주요 C2 IP는 91.92.242[.]30. Trend Micro 및 Koi Security도 800개 이상의 악성 스킬 관측. 개발자 자격증명 탈취 목적. (출처: cyera.com 검색 스니펫 — 페치 차단)
+Cyera가 2026-11-03에 발표한 연구에 따르면 AMOS가 AI 에이전트 마켓플레이스(OpenClaw/ClawHub 등)의 악성 "스킬" 패키지를 통해 배포되고 있음. 2026년 9월 기준 70개 이상의 악성 스킬 확인, 주요 C2 IP는 91.92.242[.]30, 보조 C2로 5.42.65[.]10 및 45.137.65[.]112 추가 식별. Trend Micro 및 Koi Security도 800개 이상의 악성 스킬 관측. 개발자 자격증명 탈취 목적. (출처: cyera.com 검색 스니펫 — 페치 차단)
 
 ### ClickFix/macOS ClickFix 은폐 캠페인 (2025-07 ~ 2026-08)
 Microsoft가 2026-08-05에 분석한 캠페인. 공개 HTML 페이지로 악성 명령어를 제공하던 방식에서 서버측 지문 인식 게이트(WebGL GPU 탐지 + 브라우저 프로파일링)로 전환하여 자동화 분석 도구에는 미끼를 제공하고 실제 macOS 타겟에만 페이로드를 전달. 1,650개 이상의 침해된 WordPress 사이트와 154개의 순환 C2 호스트명을 활용. AMOS, MacSync 등 배포.
@@ -292,10 +294,10 @@ Microsoft가 2026-02-02에 분석. 가짜 AI 도구 설치 프로그램으로 �
 검색 스니펫 여러 출처에서 LeaseWeb Netherlands (AS60781) 서브넷 내 복수 IP (45.94.47.144~158, 45.94.47.211)가 AMOS C2로 관측. 서브넷 전반 차단 고려 권장.
 
 ## 이번 실행 변경사항
-- 신규: 없음
+- 신규: 5.42.65[.]10 ⚠️ (미검증), 45.137.65[.]112 ⚠️ (미검증) — Cyera 2026-11-03 AI 에이전트 스킬 캠페인 보조 C2 2개 추가
 - 제거: 없음
 - 승격(미검증→검증): 없음
-- 비고: Microsoft 2026-08-05 블로그 페치 성공 — 기존 검증 도메인 17개 재확인 (applefilevault[.]com 등). 🔥 마커 제거 — 91.92.242[.]30 (Cyera 2026-11-03 보고, 현재 8일 경과로 7일 임계값 초과).
+- 비고: Microsoft 2026-02-02 블로그 페치 성공 (신규 IOC 없음, 기존 검증 항목 재확인). 대부분 벤더 도메인 EGRESS_BLOCKED (cyera.com, unit42.paloaltonetworks.com, aviatrix.ai, pcapai.com, ransom-isac.org, darktrace.com, cybersecuritynews.com, malwarebytes.com).
 
 ## 차단 운영 포맷 (복붙용)
 
@@ -467,6 +469,7 @@ yablochnisok.com
 ## 출처
 - [ClickFix campaign uses fake macOS utilities lures to deliver infostealers](https://www.microsoft.com/en-us/security/blog/2026/05/06/clickfix-campaign-uses-fake-macos-utilities-lures-deliver-infostealers/) — 2026-05-06 — fetched
 - [From open lures to cloaked gates: How a macOS ClickFix campaign learned to hide](https://www.microsoft.com/en-us/security/blog/2026/08/05/macos-clickfix-campaign-learned-hide/) — 2026-08-05 — fetched
+- [Infostealers without borders: macOS, Python stealers, and platform abuse](https://www.microsoft.com/en-us/security/blog/2026/02/02/infostealers-without-borders-macos-python-stealers-and-platform-abuse/) — 2026-02-02 — fetched (신규 IOC 없음)
 - [2026-10-02: Atomic macOS (AMOS) Stealer infection from malicious ad impersonating Claude Code](https://dev.to/mark0_617b45cda9782a/2026-10-02-atomic-macos-amos-stealer-infection-from-malicious-ad-impersonating-claude-code-1668) — 2026-10-02 — blocked
 - [Fake Claude Code ads are installing AMOS on Macs](https://mate.security/labs/fake-claude-code-ads-are-installing-amos-on-macs) — 2026-11 — blocked
 - [AMOS Malware in AI Agent Skills: Analysis and IoCs](https://www.cyera.com/research/poisoned-skills-target-developer-credentials) — 2026-11-03 — blocked
@@ -479,3 +482,6 @@ yablochnisok.com
 - [MacOS ClickFix AMOS Campaign](https://ransom-isac.org/blog/macos-clickfix-amos-campaign/) — 2026-09 — blocked
 - [Chasing a ClickFix Campaign From One Domain to a macOS Stealer](https://blog.report-uri.com/chasing-a-clickfix-campaign-from-one-domain-to-a-macos-stealer/) — 2026-09 — blocked
 - [Atomic macOS Stealer now includes a backdoor for persistent access](https://www.infostealers.com/article/atomic-macos-stealer-now-includes-a-backdoor-for-persistent-access/) — 2025-2026 — blocked
+- [AMOS Stealer Targets macOS: 2026 Campaign Analysis](https://aviatrix.ai/threat-research-center/atomic-macos-amos-stealer-activity-2026/) — 2026 — blocked
+- [Atomic macOS Stealer (AMOS): Reading the C2 Protocol from a PCAP](https://pcapai.com/blog/amos-stealer-pcap-analysis) — 2026 — blocked
+- [Atomic Stealer: Darktrace's Investigation of a Growing macOS Threat](https://www.darktrace.com/blog/atomic-stealer-darktraces-investigation-of-a-growing-macos-threat) — 2026 — blocked

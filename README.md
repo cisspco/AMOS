@@ -2,9 +2,9 @@
 
 Defensive blocking intelligence for **AMOS (Atomic macOS Stealer)** and direct variants (Odyssey). Updated daily by automated snapshot runs.
 
-**Last updated:** 2026-11-11 UTC
+**Last updated:** 2026-11-12 UTC
 **Verified domains:** 148 | **Verified IPs:** 9 | **Verified SHA-256:** 5
-**Unverified domains:** 32 | **Unverified IPs:** 24 | **Unverified hashes:** 5 (3 SHA-256 + 2 MD5)
+**Unverified domains:** 32 | **Unverified IPs:** 26 | **Unverified hashes:** 5 (3 SHA-256 + 2 MD5)
 
 ---
 
