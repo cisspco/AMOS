@@ -1,8 +1,8 @@
-# AMOS IOC Snapshot — 2026-11-13 UTC
+# AMOS IOC Snapshot — 2026-11-14 UTC
 
 ## 수집 상태
 - 페치 성공: https://www.microsoft.com/en-us/security/blog/2026/08/05/macos-clickfix-campaign-learned-hide/, https://www.microsoft.com/en-us/security/blog/2026/05/06/clickfix-campaign-uses-fake-macos-utilities-lures-deliver-infostealers/
-- 페치 차단(EGRESS_BLOCKED): cyera.com, unit42.paloaltonetworks.com, ransom-isac.org
+- 페치 차단(EGRESS_BLOCKED): cyera.com, ransom-isac.org, moonlock.com
 - 검증된 IOC: 162개 (도메인 148 + IP 9 + SHA-256 5) / 미검증 IOC: 63개 (도메인 32 + IP 26 + SHA-256 3 + MD5 2)
 
 ## 활성 C2 도메인 (148)
@@ -285,7 +285,7 @@ Microsoft가 2026-02-02에 분석. 가짜 AI 도구 설치 프로그램으로 �
 - 신규: 없음
 - 제거: 없음
 - 승격(미검증→검증): 없음
-- 비고: Microsoft 2026-08-05 및 2026-05-06 블로그 페치 성공 (신규 IOC 없음, 기존 검증 항목 재확인). 벤더 도메인 EGRESS_BLOCKED (cyera.com, unit42.paloaltonetworks.com, ransom-isac.org).
+- 비고: Microsoft 2026-08-05 및 2026-05-06 블로그 페치 성공 (신규 IOC 없음, 기존 검증 항목 재확인). 벤더 도메인 EGRESS_BLOCKED (cyera.com, ransom-isac.org, moonlock.com).
 
 ## 차단 운영 포맷 (복붙용)
 
@@ -460,3 +460,4 @@ yablochnisok.com
 - [AMOS Malware in AI Agent Skills: Analysis and IoCs](https://www.cyera.com/research/poisoned-skills-target-developer-credentials) — 2026-11-03 — blocked (cyera.com)
 - [Atomic macOS (AMOS) Stealer Activity](https://unit42.paloaltonetworks.com/atomic-macos-amos-stealer-activity/) — 2026-08 — blocked (unit42.paloaltonetworks.com)
 - [MacOS ClickFix AMOS Campaign](https://ransom-isac.org/blog/macos-clickfix-amos-campaign/) — 2026-07-28+ — blocked (ransom-isac.org)
+- [Atomic macOS Stealer is mimicking an AI agent tool for Mac](https://moonlock.com/amos-mimicking-ai-agent-tool) — 2026 — blocked (moonlock.com)
