@@ -1,8 +1,8 @@
-# AMOS IOC Snapshot — 2026-11-17 UTC
+# AMOS IOC Snapshot — 2026-11-18 UTC
 
 ## 수집 상태
 - 페치 성공: https://www.microsoft.com/en-us/security/blog/2026/08/05/macos-clickfix-campaign-learned-hide/
-- 페치 차단(EGRESS_BLOCKED): unit42.paloaltonetworks.com, dev.to, www.trendmicro.com, techcommunity.microsoft.com, pcapai.com, isc.sans.edu, mallory.ai, nhimg.org
+- 페치 차단(EGRESS_BLOCKED): unit42.paloaltonetworks.com, moonlock.com, ransom-isac.org, dev.to
 - 검증된 IOC: 162개 (도메인 148 + IP 9 + SHA-256 5) / 미검증 IOC: 65개 (도메인 34 + IP 26 + SHA-256 3 + MD5 2)
 
 ## 활성 C2 도메인 (148)
@@ -287,10 +287,10 @@ Microsoft가 2026-02-02에 분석. 가짜 AI 도구 설치 프로그램으로 �
 검색 스니펫 여러 출처에서 LeaseWeb Netherlands (AS60781) 서브넷 내 복수 IP (45.94.47.144~158, 45.94.47.211)가 AMOS C2로 관측. 서브넷 전반 차단 고려 권장.
 
 ## 이번 실행 변경사항
-- 신규: 없음 — 2026-11-17 실행에서 검색 스니펫상 추가 신규 IOC 없음; 페치 성공한 Microsoft 2026-08-05 블로그는 기존 17개 ClickFix 도메인만 재확인
+- 신규: 없음 — 2026-11-18 실행에서 추가 신규 IOC 없음; 페치 성공한 Microsoft 2026-08-05 블로그는 기존 17개 ClickFix 도메인만 재확인
 - 제거: 없음
 - 승격(미검증→검증): 없음
-- 비고: unit42.paloaltonetworks.com, dev.to, www.trendmicro.com, techcommunity.microsoft.com, pcapai.com, isc.sans.edu, mallory.ai, nhimg.org 모두 EGRESS_BLOCKED (DNS 미해석)
+- 비고: unit42.paloaltonetworks.com, moonlock.com, ransom-isac.org, dev.to 모두 EGRESS_BLOCKED (DNS 미해석)
 
 ## 차단 운영 포맷 (복붙용)
 
@@ -471,4 +471,4 @@ yablochnisok.com
 - [Malicious OpenClaw Skills Used to Distribute Atomic macOS Stealer](https://www.trendmicro.com/en_us/research/26/b/openclaw-skills-used-to-distribute-atomic-macos-stealer.html) — 2026 — blocked (www.trendmicro.com)
 - [Hunting Infostealers - macOS Threats](https://techcommunity.microsoft.com/blog/microsoft-defender-experts/hunting-infostealers---macos-threats/4494435) — 2026 — blocked (techcommunity.microsoft.com)
 - [New ClickFix Campaign Uses macOS Script Editor to Deliver Atomic Stealer](https://cybersecuritynews.com/new-clickfix-campaign-uses-macos-script-editor/) — 2026 — blocked (search snippet only)
-- [Atomic macOS stealer is mimicking an AI agent tool for Mac](https://moonlock.com/amos-mimicking-ai-agent-tool) — 2026 — blocked (search snippet only)
+- [Atomic macOS stealer is mimicking an AI agent tool for Mac](https://moonlock.com/amos-mimicking-ai-agent-tool) — 2026 — blocked (moonlock.com)
