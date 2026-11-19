@@ -1,8 +1,8 @@
 # AMOS / Atomic macOS Stealer IOC Repository
 
-**Last updated:** 2026-11-18 UTC  
+**Last updated:** 2026-11-19 UTC  
 **Verified domains:** 148 | **Verified IPs:** 9 | **Verified hashes (SHA-256):** 5  
-**Unverified domains:** 34 | **Unverified IPs:** 26 | **Unverified hashes:** 5 (3 SHA-256 + 2 MD5)
+**Unverified domains:** 35 | **Unverified IPs:** 26 | **Unverified hashes:** 5 (3 SHA-256 + 2 MD5)
 
 ## Purpose
 
