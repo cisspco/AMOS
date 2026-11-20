@@ -1,8 +1,8 @@
-# AMOS IOC Snapshot — 2026-11-19 UTC
+# AMOS IOC Snapshot — 2026-11-20 UTC
 
 ## 수집 상태
 - 페치 성공: https://www.microsoft.com/en-us/security/blog/2026/08/05/macos-clickfix-campaign-learned-hide/, https://www.microsoft.com/en-us/security/blog/2026/05/06/clickfix-campaign-uses-fake-macos-utilities-lures-deliver-infostealers/
-- 페치 차단(EGRESS_BLOCKED): unit42.paloaltonetworks.com, www.trendmicro.com, moonlock.com, dev.to, techcommunity.microsoft.com, www.f5.com
+- 페치 차단(EGRESS_BLOCKED): unit42.paloaltonetworks.com, pcapai.com, moonlock.com
 - 검증된 IOC: 162개 (도메인 148 + IP 9 + SHA-256 5) / 미검증 IOC: 66개 (도메인 35 + IP 26 + SHA-256 3 + MD5 2)
 
 ## 활성 C2 도메인 (148)
@@ -288,10 +288,10 @@ Microsoft가 2026-02-02에 분석. 가짜 AI 도구 설치 프로그램으로 �
 검색 스니펫 여러 출처에서 LeaseWeb Netherlands (AS60781) 서브넷 내 복수 IP (45.94.47.144~158, 45.94.47.211)가 AMOS C2로 관측. 서브넷 전반 차단 고려 권장.
 
 ## 이번 실행 변경사항
-- 신규: main.mon2gate[.]net ⚠️ (미검증) — F5 April 2026 weekly bulletin에서 AMOS 배포 도메인으로 명시 (검색 스니펫, www.f5.com 페치 차단)
+- 신규: 없음
 - 제거: 없음
 - 승격(미검증→검증): 없음
-- 비고: Microsoft 2026-05-06 및 2026-08-05 블로그 재페치 성공 — 기존 검증 IOC 모두 재확인, 신규 검증 항목 없음; unit42.paloaltonetworks.com, www.trendmicro.com, moonlock.com, dev.to, techcommunity.microsoft.com, www.f5.com EGRESS_BLOCKED (DNS 미해석)
+- 비고: Microsoft 2026-05-06 및 2026-08-05 블로그 재페치 성공 — 기존 검증 IOC 모두 재확인, 신규 검증 항목 없음; unit42.paloaltonetworks.com, pcapai.com, moonlock.com EGRESS_BLOCKED (DNS 미해석)
 
 ## 차단 운영 포맷 (복붙용)
 
@@ -474,3 +474,4 @@ yablochnisok.com
 - [Weekly Threat Bulletin - April 15th 2026](https://www.f5.com/labs/articles/weekly-threat-bulletin-april-15th-2026) — 2026-04-15 — blocked (www.f5.com)
 - [New ClickFix Campaign Uses macOS Script Editor to Deliver Atomic Stealer](https://cybersecuritynews.com/new-clickfix-campaign-uses-macos-script-editor/) — 2026 — blocked (search snippet only)
 - [Atomic macOS stealer is mimicking an AI agent tool for Mac](https://moonlock.com/amos-mimicking-ai-agent-tool) — 2026 — blocked (moonlock.com)
+- [Atomic macOS Stealer (AMOS): Reading the C2 Protocol from a PCAP](https://pcapai.com/blog/amos-stealer-pcap-analysis) — 2026 — blocked (pcapai.com)
