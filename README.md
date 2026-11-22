@@ -1,51 +1,42 @@
-# AMOS / Atomic macOS Stealer — IOC Tracking Repository
+# AMOS IOC Repository
 
-**Last updated:** 2026-11-21 UTC
+**Last updated:** 2026-11-22 UTC (automated daily snapshot)
 
-| Category | Count |
-|---|---|
-| Verified domains | 148 |
-| Verified IPs | 9 |
-| Verified SHA-256 hashes | 5 |
-| Unverified domains | 35 |
-| Unverified IPs | 26 |
-| Unverified hashes (SHA-256 + MD5) | 5 |
-
-## Purpose
-
-This repository tracks infrastructure IOCs (indicators of compromise) for **AMOS / Atomic macOS Stealer** and known direct variants, for defensive blocking purposes. Snapshots are generated daily by an automated collector.
-
-## Blocklist Files
-
-| File | Contents | Safe for firewall? |
+## Counts
+| Category | Verified | Unverified |
 |---|---|---|
-| `blocklists/domains.txt` | **Verified** domains, un-defanged, sorted | ✅ YES |
-| `blocklists/ips.txt` | **Verified** IPs, un-defanged, sorted | ✅ YES |
-| `blocklists/unverified-domains.txt` | Unverified domains (search snippets only) | ⚠️ Review first |
-| `blocklists/unverified-ips.txt` | Unverified IPs (search snippets only) | ⚠️ Review first |
+| Domains | 148 | 38 |
+| IPs | 9 | 26 |
+| SHA-256 hashes | 5 | 3 |
+| MD5 hashes | 0 | 2 |
+| **Total IOCs** | **162** | **69** |
 
-> **`blocklists/domains.txt` and `blocklists/ips.txt` are the only files safe to feed directly into a firewall or DNS sinkhole without additional review.**
+## Blocklist URLs (raw, for firewall/DNS import)
 
-### Raw blocklist URLs (GitHub raw)
-- `https://raw.githubusercontent.com/cisspco/AMOS/main/blocklists/domains.txt`
-- `https://raw.githubusercontent.com/cisspco/AMOS/main/blocklists/ips.txt`
-- `https://raw.githubusercontent.com/cisspco/AMOS/main/blocklists/unverified-domains.txt`
-- `https://raw.githubusercontent.com/cisspco/AMOS/main/blocklists/unverified-ips.txt`
+> **Important:** Only `blocklists/domains.txt` and `blocklists/ips.txt` are verified and safe to feed directly into a firewall or DNS sinkhole. The `unverified-*.txt` files require manual review before operational use.
 
-## Evidence Levels
+| File | Description |
+|---|---|
+| [`blocklists/domains.txt`](blocklists/domains.txt) | VERIFIED domains — firewall/DNS-safe |
+| [`blocklists/ips.txt`](blocklists/ips.txt) | VERIFIED IPs — firewall-safe |
+| [`blocklists/unverified-domains.txt`](blocklists/unverified-domains.txt) | Unverified domains (search snippets only) |
+| [`blocklists/unverified-ips.txt`](blocklists/unverified-ips.txt) | Unverified IPs (search snippets only) |
 
-- **Verified** — IOC extracted from the body of a successfully fetched vendor report
-- **Unverified ⚠️** — IOC sourced only from a search-result snippet or a report whose fetch was blocked; never placed in the verified blocklists
+## Latest Snapshot
 
-## Snapshots
+See [`latest.md`](latest.md) for the full current IOC report with context, campaign summaries, and change log, or browse [`snapshots/`](snapshots/) for historical daily runs.
 
-Full daily snapshots (Korean, defanged) are in `snapshots/YYYY-MM-DD.md`. The latest snapshot is always `latest.md`.
+## Methodology
 
-## Sources
+- **Verified** IOCs appeared in the body of a successfully fetched vendor report.
+- **Unverified** IOCs came from search result snippets or reports whose fetch was blocked by the egress proxy.
+- Blocklists are cumulative; entries are only removed when a fetched report explicitly confirms sinkholing or takedown.
+- IOCs are defanged in the markdown reports (`example[.]com`, `1.2.3[.]4`) but un-defanged in the `blocklists/*.txt` files.
 
-Primary verified sources (successfully fetched at least once):
-- Microsoft Security Blog — 2026-05-06 and 2026-08-05 ClickFix/AMOS analyses
-- Microsoft Security Blog — 2026-02-02 alli-ai campaign analysis
-
-Blocked sources (DNS not resolved by this environment):
-- unit42.paloaltonetworks.com, moonlock.com, cybersecuritynews.com, darktrace.com, ransom-isac.org, pcapai.com
+## Sources (primary)
+- Microsoft Security Blog — https://www.microsoft.com/en-us/security/blog/
+- Unit 42 / Palo Alto Networks
+- Moonlock / Intego
+- Darktrace
+- RANSOM-ISAC
+- Cyera Threat Research
