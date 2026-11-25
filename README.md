@@ -1,6 +1,6 @@
 # AMOS IOC Repository
 
-**Last updated:** 2026-11-24 UTC (automated daily snapshot)
+**Last updated:** 2026-11-25 UTC (automated daily snapshot)
 
 ## Counts
 | Category | Verified | Unverified |
