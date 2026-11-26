@@ -1,9 +1,9 @@
-# AMOS IOC Snapshot — 2026-11-25 UTC
+# AMOS IOC Snapshot — 2026-11-26 UTC
 
 ## 수집 상태
-- 페치 성공: https://www.microsoft.com/en-us/security/blog/2026/08/05/macos-clickfix-campaign-learned-hide/
-- 페치 차단(EGRESS_BLOCKED): ransom-isac.org, unit42.paloaltonetworks.com, www.trendmicro.com, www.cyera.com
-- 검증된 IOC: 162개 (도메인 148 + IP 9 + SHA-256 5) / 미검증 IOC: 69개 (도메인 38 + IP 26 + SHA-256 3 + MD5 2)
+- 페치 성공: https://www.microsoft.com/en-us/security/blog/2026/08/05/macos-clickfix-campaign-learned-hide/, https://www.microsoft.com/en-us/security/blog/2026/05/06/clickfix-campaign-uses-fake-macos-utilities-lures-deliver-infostealers/
+- 페치 차단(EGRESS_BLOCKED): ransom-isac.org, mate.security, blogs.npav.net
+- 검증된 IOC: 162개 (도메인 148 + IP 9 + SHA-256 5) / 미검증 IOC: 70개 (도메인 39 + IP 26 + SHA-256 3 + MD5 2)
 
 ## 활성 C2 도메인 (148)
 - 0x666[.]info — AMOS 스크립트 캠페인 C2 (Microsoft 2026-05-06)
@@ -196,7 +196,8 @@
 - `~/Library/Caches/com.apple.trustd/com.apple.periodic` ⚠️ (미검증) — ClickFix AMOS 로더 은닉 지속성 경로 (blog.report-uri.com 검색 스니펫 — 페치 차단)
 - `/var/db/.d87352f2` ⚠️ (미검증) — AMOS ClickFix 캠페인 마커 파일 (ransom-isac.org 검색 스니펫 — 페치 차단)
 
-## 미검증 도메인 (38) ⚠️
+## 미검증 도메인 (39) ⚠️
+- alliai[.]com ⚠️ (미검증) — Microsoft DEX 관측: AMOS 가짜 AI 도구 리디렉션 체인 경유 도메인, alli-ai[.]pro와 함께 사용 (Microsoft/techcommunity 검색 스니펫 — 2026-01)
 - amos-malware[.]ru ⚠️ (미검증) — Moonlock 분석: AMOS 하드코딩 유출 도메인, /sendlog POST (검색 스니펫 — moonlock.com 페치 차단)
 - analyticshore[.]icu ⚠️ (미검증) — ClickFix AMOS 로더 배포 도메인, 2026-07~09 캠페인 운영 (blog.report-uri.com 검색 스니펫 — 페치 차단)
 - applemacios[.]com ⚠️ (미검증) — AMOS 가짜 macOS 도구 사이트, /getrur/install.sh 스크립트 호스팅 (CloudSEK 검색 스니펫 — 페치 차단)
@@ -270,10 +271,10 @@
 악성 AI 에이전트 마켓플레이스(OpenClaw/ClawHub) 스킬 패키지를 통해 AMOS 배포 지속. 2026-11-19 OpenSourceMalware.com 최신 활동 보고에서 socifiapp[.]com(탈취 데이터 수신), custom-registry[.]com 및 vorderingenonline[.]com(관련 인프라) 신규 식별. 개발자·AI 사용자 자격증명 탈취 목적. Cyera(2026-11-03)가 주요 C2 IP 91.92.242[.]30 보고. Trend Micro가 OpenClaw를 악용한 AMOS 배포 캠페인 보고(trendmicro.com — 이번 실행 페치 차단).
 
 ### AMOS ClickFix 은폐 캠페인 (2026-07-28~2026-08) [검증]
-Microsoft가 2026-08-05 분석. 서버측 브라우저 지문 인식(WebGL GPU 탐지)으로 자동화 분석 도구에는 미끼를 제공하고 실제 macOS 타겟에만 페이로드 전달. 1,650개 이상의 침해된 WordPress 사이트와 154개 순환 C2 호스트명 활용. AMOS 및 MacSync 배포. 2026-11-25 재확인.
+Microsoft가 2026-08-05 분석. 서버측 브라우저 지문 인식(WebGL GPU 탐지)으로 자동화 분석 도구에는 미끼를 제공하고 실제 macOS 타겟에만 페이로드 전달. 1,650개 이상의 침해된 WordPress 사이트와 154개 순환 C2 호스트명 활용. AMOS 및 MacSync 배포. 2026-11-26 재확인.
 
 ### 로더/스크립트/헬퍼 3중 캠페인 (2026-01~2026-05) [검증]
-Microsoft 2026-05-06 분석. 세 가지 별도 캠페인 동시 운영: ①로더(64개 도메인, Base64 Mach-O 드롭), ②스크립트(0x666[.]info 등 C2, 쉘 스크립트 직접 실행), ③헬퍼(24개 도메인, AMOS 헬퍼 바이너리). 4개 SHA-256 해시 확인. Squarespace·Medium·Craft.me 등 정상 플랫폼 서브도메인 악용. 2026-11-25 재확인.
+Microsoft 2026-05-06 분석. 세 가지 별도 캠페인 동시 운영: ①로더(64개 도메인, Base64 Mach-O 드롭), ②스크립트(0x666[.]info 등 C2, 쉘 스크립트 직접 실행), ③헬퍼(24개 도메인, AMOS 헬퍼 바이너리). 4개 SHA-256 해시 확인. Squarespace·Medium·Craft.me 등 정상 플랫폼 서브도메인 악용. 2026-11-26 재확인.
 
 ### EvilTokens/ClickFix Claude Code 사칭 캠페인 (2026-03) [미검증]
 Google 광고로 Claude Code를 사칭하는 AMOS 배포 캠페인. ClickFix로 Terminal 명령 실행 유도. Cloudflare Workers 도메인을 C2/스테이징으로 활용. 지속성 경로: `~/.mainhelper`. (cybersecuritynews.com 검색 스니펫)
@@ -282,13 +283,13 @@ Google 광고로 Claude Code를 사칭하는 AMOS 배포 캠페인. ClickFix로 
 중소기업 WordPress 사이트 침해, 가짜 "Bot Protection" 화면을 통해 macOS 사용자 대상 AMOS 배포. 암호화폐 지갑·브라우저 자격증명·Keychain 탈취. (ransom-isac.org 검색 스니펫 — 소스 페치 차단)
 
 ### AMOS/alli-ai 캠페인 (2026-02) [검증]
-Microsoft 2026-02-02 분석. 가짜 AI 도구 설치 프로그램으로 위장한 AMOS 배포. alli-ai[.]pro 도메인, C2 IP 217.119.139[.]117, Trojan:AtomicSteal.F 탐지.
+Microsoft 2026-02-02 분석. 가짜 AI 도구 설치 프로그램으로 위장한 AMOS 배포. alli-ai[.]pro 및 alliai[.]com 도메인, C2 IP 217.119.139[.]117, Trojan:AtomicSteal.F 탐지. (alliai[.]com은 검색 스니펫 소스 — 미검증)
 
 ## 이번 실행 변경사항
-- 신규: 없음 (이번 실행 페치 성공 소스의 모든 IOC가 기존 누적 목록에 이미 포함됨)
+- 신규: alliai[.]com (미검증 도메인 +1 — Microsoft/techcommunity 검색 스니펫, alli-ai[.]pro와 함께 사용된 AMOS 리디렉션 경유 도메인)
 - 제거: 없음
 - 승격(미검증→검증): 없음
-- 비고: 이번 실행에서 1개 Microsoft 소스(2026-08-05) 페치 성공. 보고서의 17개 ClickFix 도메인이 이전 실행에서 이미 검증됨. 나머지 4개 URL(ransom-isac.org, unit42.paloaltonetworks.com, www.trendmicro.com, www.cyera.com) EGRESS_BLOCKED/ENOTFOUND로 차단. 검색 스니펫에서 신규 AMOS 귀속 도메인·IP 미발견.
+- 비고: 이번 실행에서 2개 Microsoft 소스(2026-08-05, 2026-05-06) 페치 성공. 두 보고서의 모든 IOC가 기존 누적 목록에 이미 포함됨. ransom-isac.org, mate.security, blogs.npav.net ENOTFOUND로 차단.
 
 ## 차단 운영 포맷 (복붙용)
 
@@ -458,13 +459,13 @@ yablochnisok.com
 ```
 
 ## 출처
-- [From open lures to cloaked gates: How a macOS ClickFix campaign learned to hide](https://www.microsoft.com/en-us/security/blog/2026/08/05/macos-clickfix-campaign-learned-hide/) — 2026-08-05 — fetched (2026-11-25 재확인)
-- [ClickFix campaign uses fake macOS utilities lures to deliver infostealers](https://www.microsoft.com/en-us/security/blog/2026/05/06/clickfix-campaign-uses-fake-macos-utilities-lures-deliver-infostealers/) — 2026-05-06 — fetched (이전 실행)
+- [From open lures to cloaked gates: How a macOS ClickFix campaign learned to hide](https://www.microsoft.com/en-us/security/blog/2026/08/05/macos-clickfix-campaign-learned-hide/) — 2026-08-05 — fetched (2026-11-26 재확인)
+- [ClickFix campaign uses fake macOS utilities lures to deliver infostealers](https://www.microsoft.com/en-us/security/blog/2026/05/06/clickfix-campaign-uses-fake-macos-utilities-lures-deliver-infostealers/) — 2026-05-06 — fetched (2026-11-26 재확인)
 - [Malicious OpenClaw Skills Used to Distribute Atomic macOS Stealer](https://www.trendmicro.com/en_us/research/26/b/openclaw-skills-used-to-distribute-atomic-macos-stealer.html) — 2026 — blocked (www.trendmicro.com ENOTFOUND)
 - [Atomic macOS (AMOS) Stealer Activity — Unit 42](https://unit42.paloaltonetworks.com/atomic-macos-amos-stealer-activity/) — 2026 — blocked (unit42.paloaltonetworks.com ENOTFOUND)
 - [MacOS ClickFix AMOS Campaign — RANSOM-ISAC](https://ransom-isac.org/blog/macos-clickfix-amos-campaign/) — 2026-07+ — blocked (ransom-isac.org ENOTFOUND)
-- [AMOS Malware in AI Agent Skills: Analysis and IoCs](https://www.cyera.com/research/poisoned-skills-target-developer-credentials) — 2026-11-03 — blocked (www.cyera.com ENOTFOUND)
-- [AMOS Stealer Targets macOS: 2026 Campaign Analysis](https://aviatrix.ai/threat-research-center/atomic-macos-amos-stealer-activity-2026/) — 2026 — blocked (prior runs)
+- [Fake Claude Code ads are installing AMOS on Macs — Mate Security](https://mate.security/labs/fake-claude-code-ads-are-installing-amos-on-macs) — 2026-11+ — blocked (mate.security ENOTFOUND)
+- [250+ Fake macOS ClickFix Domains Deliver Atomic Stealer Using Browser Fingerprinting — NPAV](https://blogs.npav.net/blogs/post/250-fake-macos-clickfix-domains-deliver-atomic-stealer-using-browser-fingerprinting) — 2026-08 — blocked (blogs.npav.net ENOTFOUND)
+- [AMOS Malware in AI Agent Skills: Analysis and IoCs — Cyera](https://www.cyera.com/research/poisoned-skills-target-developer-credentials) — 2026-11-03 — blocked (prior runs)
 - [Atomic macOS Stealer now includes a backdoor for persistent access](https://www.infostealers.com/article/atomic-macos-stealer-now-includes-a-backdoor-for-persistent-access/) — 2026 — blocked (prior runs)
-- [2026-10-02: Atomic macOS (AMOS) Stealer infection from malicious ad impersonating Claude Code](https://dev.to/mark0_617b45cda9782a/2026-10-02-atomic-macos-amos-stealer-infection-from-malicious-ad-impersonating-claude-code-1668) — 2026-10-02 — blocked (prior runs)
 - [Atomic macOS stealer is mimicking an AI agent tool for Mac — Moonlock](https://moonlock.com/amos-mimicking-ai-agent-tool) — 2026 — blocked (prior runs)
