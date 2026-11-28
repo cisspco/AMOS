@@ -1,8 +1,8 @@
-# AMOS IOC Snapshot — 2026-11-27 UTC
+# AMOS IOC Snapshot — 2026-11-28 UTC
 
 ## 수집 상태
-- 페치 성공: 없음
-- 페치 차단(EGRESS_BLOCKED): cyera.com, ransom-isac.org, mate.security, techcommunity.microsoft.com, www.trendmicro.com, unit42.paloaltonetworks.com, blog.report-uri.com, www.darktrace.com
+- 페치 성공: https://www.microsoft.com/en-us/security/blog/2026/08/05/macos-clickfix-campaign-learned-hide/, https://www.microsoft.com/en-us/security/blog/2026/05/06/clickfix-campaign-uses-fake-macos-utilities-lures-deliver-infostealers/
+- 페치 차단(EGRESS_BLOCKED): ransom-isac.org, unit42.paloaltonetworks.com, mate.security
 - 검증된 IOC: 162개 (도메인 148 + IP 9 + SHA-256 5) / 미검증 IOC: 70개 (도메인 39 + IP 26 + SHA-256 3 + MD5 2)
 
 ## 활성 C2 도메인 (148)
@@ -289,7 +289,7 @@ Microsoft 2026-02-02 분석. 가짜 AI 도구 설치 프로그램으로 위장�
 - 신규: 없음
 - 제거: 없음
 - 승격(미검증→검증): 없음
-- 비고: 이번 실행에서 모든 소스 페치 차단(EGRESS_BLOCKED). 오늘 검색 스니펫에서 신규 IOC 발견 없음. 🔥 마커 제거 — custom-registry[.]com, socifiapp[.]com, vorderingenonline[.]com의 최초 보고일(2026-11-19)이 7일 창 초과.
+- 비고: 이번 실행에서 두 개의 Microsoft 보고서 페치 성공. 두 보고서 모두 이전 실행에서 이미 페치됨. 신규 IOC 없음. ransom-isac.org, unit42.paloaltonetworks.com, mate.security는 이번 실행에서도 EGRESS_BLOCKED.
 
 ## 차단 운영 포맷 (복붙용)
 
@@ -459,8 +459,8 @@ yablochnisok.com
 ```
 
 ## 출처
-- [From open lures to cloaked gates: How a macOS ClickFix campaign learned to hide](https://www.microsoft.com/en-us/security/blog/2026/08/05/macos-clickfix-campaign-learned-hide/) — 2026-08-05 — fetched (prior run 2026-11-26)
-- [ClickFix campaign uses fake macOS utilities lures to deliver infostealers](https://www.microsoft.com/en-us/security/blog/2026/05/06/clickfix-campaign-uses-fake-macos-utilities-lures-deliver-infostealers/) — 2026-05-06 — fetched (prior run 2026-11-26)
+- [From open lures to cloaked gates: How a macOS ClickFix campaign learned to hide](https://www.microsoft.com/en-us/security/blog/2026/08/05/macos-clickfix-campaign-learned-hide/) — 2026-08-05 — fetched
+- [ClickFix campaign uses fake macOS utilities lures to deliver infostealers](https://www.microsoft.com/en-us/security/blog/2026/05/06/clickfix-campaign-uses-fake-macos-utilities-lures-deliver-infostealers/) — 2026-05-06 — fetched
 - [AMOS Malware in AI Agent Skills: Analysis and IoCs — Cyera](https://www.cyera.com/research/poisoned-skills-target-developer-credentials) — 2026-11-03 — blocked (cyera.com ENOTFOUND)
 - [MacOS ClickFix AMOS Campaign — RANSOM-ISAC](https://ransom-isac.org/blog/macos-clickfix-amos-campaign/) — 2026-07+ — blocked (ransom-isac.org ENOTFOUND)
 - [Fake Claude Code ads are installing AMOS on Macs — Mate Security](https://mate.security/labs/fake-claude-code-ads-are-installing-amos-on-macs) — 2026-11-01+ — blocked (mate.security ENOTFOUND)
